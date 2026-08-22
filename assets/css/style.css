@@ -1,30 +1,32 @@
 /* ===================================================
    Qiskit Fall Fest ITS 2026 - Main Stylesheet
+   Theme: Clean Tech White, Deep ITS Navy, Royal Blue & Golden Yellow
+   Inspired by: Flyer QISKIT Fall Fest 2026
    =================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
-  /* ITS Blue Palette */
-  --its-navy: #021431;
-  --its-dark-blue: #01215b;
-  --its-primary: #013880;
-  --its-royal: #0C64C2;
-  --its-cyan: #00A3FF;
-  --its-bright-cyan: #00E5FF;
-  --its-gold: #FFC72C;
-  --its-amber: #F59E0B;
+  /* ITS & Flyer Color Palette */
+  --its-navy: #002868;
+  --its-navy-dark: #001A44;
+  --its-blue: #00509D;
+  --its-royal: #0D47A1;
+  --its-sky: #0077B6;
+  --its-ice: #E8F1FC;
+  --its-ice-light: #F4F8FD;
+  --its-yellow: #FFB703;
+  --its-gold: #FFA000;
+  --its-amber: #FB8500;
 
-  /* IBM Quantum & Qiskit Palette */
-  --qiskit-magenta: #FF7EB6;
-  --qiskit-pink: #EE5396;
-  --qiskit-purple: #8A3FFC;
-  --qiskit-dark-purple: #6929C4;
-  --quantum-dark: #070B19;
-  --quantum-surface: #0E162E;
-  --quantum-surface-elevated: #152244;
-  --quantum-border: rgba(0, 163, 255, 0.15);
-  --quantum-border-hover: rgba(0, 163, 255, 0.4);
+  /* Neutrals */
+  --bg-main: #F8FAFD;
+  --bg-card: #FFFFFF;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-light: #64748B;
+  --border-light: rgba(0, 80, 157, 0.12);
+  --border-card: #E2E8F0;
 
   /* Fonts */
   --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -40,201 +42,207 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-main);
-  background-color: var(--quantum-dark);
-  color: #F3F4F6;
+  background-color: var(--bg-main);
+  color: var(--text-main);
 }
 
 body {
   overflow-x: hidden;
-  background-color: var(--quantum-dark);
+  background-color: var(--bg-main);
   min-height: 100vh;
   position: relative;
+  color: var(--text-main);
 }
 
-/* Custom Quantum Scrollbar */
+/* Clean Professional Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070B19;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #013880 0%, #8A3FFC 50%, #FF7EB6 100%);
-  border-radius: 5px;
-  border: 2px solid #070B19;
+  background: #94A3B8;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00A3FF 0%, #8A3FFC 50%, #FF7EB6 100%);
+  background: var(--its-blue);
 }
 
-/* Canvas Background */
-#quantum-bg-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.75;
+/* Subtle Quantum Vector Grid (Lightweight CSS, No Canvas) */
+.quantum-subtle-bg {
+  background-color: #F8FAFD;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0, 80, 157, 0.08) 1px, transparent 0),
+    linear-gradient(to right, rgba(0, 80, 157, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 80, 157, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(14, 22, 46, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 163, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+/* Clean Header Navbar */
+.flyer-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 80, 157, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 40, 104, 0.04);
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Clean Cards */
+.flyer-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 80, 157, 0.1);
+  box-shadow: 0 4px 20px -2px rgba(0, 40, 104, 0.06);
+  border-radius: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.glass-panel-hover:hover {
-  background: rgba(21, 34, 68, 0.85);
-  border-color: rgba(0, 163, 255, 0.35);
-  box-shadow: 0 12px 40px 0 rgba(0, 163, 255, 0.18);
-  transform: translateY(-4px);
+.flyer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(0, 40, 104, 0.1);
+  border-color: rgba(0, 80, 157, 0.25);
 }
 
-.glass-nav {
-  background: rgba(7, 11, 25, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 163, 255, 0.12);
+/* Pill Badges from Flyer */
+.flyer-pill-badge {
+  background: #002868;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 40, 104, 0.12);
+}
+
+.flyer-pill-yellow-tab {
+  background: #FFB703;
+  color: #002868;
+  font-weight: 800;
 }
 
 /* Buttons */
-.btn-quantum-primary {
-  background: linear-gradient(135deg, #013880 0%, #0C64C2 40%, #8A3FFC 100%);
+.btn-flyer-primary {
+  background: #002868;
   color: #FFFFFF;
-  border: 1px solid rgba(0, 229, 255, 0.4);
-  box-shadow: 0 0 20px rgba(12, 100, 194, 0.4);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 40, 104, 0.18);
 }
 
-.btn-quantum-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: 0.5s;
+.btn-flyer-primary:hover {
+  background: #001A44;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 40, 104, 0.25);
 }
 
-.btn-quantum-primary:hover::before {
-  left: 100%;
+.btn-flyer-yellow {
+  background: #FFB703;
+  color: #002868;
+  border-radius: 9999px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(255, 183, 3, 0.3);
 }
 
-.btn-quantum-primary:hover {
-  background: linear-gradient(135deg, #0C64C2 0%, #00A3FF 50%, #FF7EB6 100%);
-  box-shadow: 0 0 30px rgba(0, 163, 255, 0.6), 0 0 10px rgba(255, 126, 182, 0.4);
-  transform: translateY(-2px) scale(1.02);
-  border-color: rgba(255, 255, 255, 0.8);
+.btn-flyer-yellow:hover {
+  background: #FFA000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 183, 3, 0.4);
 }
 
-.btn-quantum-outline {
-  background: rgba(14, 22, 46, 0.6);
-  color: #00E5FF;
-  border: 1px solid rgba(0, 163, 255, 0.4);
-  box-shadow: 0 0 15px rgba(0, 163, 255, 0.1);
-  transition: all 0.3s ease;
+.btn-flyer-outline {
+  background: #FFFFFF;
+  color: #002868;
+  border: 2px solid #00509D;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-.btn-quantum-outline:hover {
-  background: rgba(0, 163, 255, 0.15);
-  color: #FFFFFF;
-  border-color: #00E5FF;
-  box-shadow: 0 0 25px rgba(0, 163, 255, 0.4);
-  transform: translateY(-2px);
+.btn-flyer-outline:hover {
+  background: #E8F1FC;
+  color: #001A44;
+  transform: translateY(-1px);
 }
 
-.btn-quantum-magenta {
-  background: linear-gradient(135deg, #FF7EB6 0%, #EE5396 50%, #8A3FFC 100%);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 20px rgba(238, 83, 150, 0.4);
-  transition: all 0.3s ease;
-}
-
-.btn-quantum-magenta:hover {
-  background: linear-gradient(135deg, #EE5396 0%, #FF7EB6 50%, #00A3FF 100%);
-  box-shadow: 0 0 30px rgba(255, 126, 182, 0.6);
-  transform: translateY(-2px) scale(1.02);
-}
-
-/* Nav Link States */
+/* Nav Links */
 .nav-link {
+  color: #334155;
+  font-weight: 600;
+  transition: color 0.2s ease;
   position: relative;
-  color: #CBD5E1;
-  font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #00E5FF;
+  color: #00509D;
 }
 
 .nav-link.active {
-  color: #00E5FF;
-  font-weight: 600;
+  color: #002868;
+  font-weight: 700;
 }
 
 .nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: -6px;
+  bottom: -4px;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #00A3FF, #FF7EB6);
+  height: 3px;
+  background: #FFB703;
   border-radius: 2px;
-  box-shadow: 0 0 10px #00E5FF;
 }
 
-/* Quantum Circuit Background Layer */
-.quantum-grid-pattern {
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(0, 163, 255, 0.15) 1px, transparent 0),
-    linear-gradient(to right, rgba(138, 63, 252, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(138, 63, 252, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px, 64px 64px, 64px 64px;
-}
-
-/* Section Divider */
-.quantum-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 163, 255, 0.3) 30%, rgba(255, 126, 182, 0.5) 50%, rgba(0, 163, 255, 0.3) 70%, transparent 100%);
-}
-
-/* Form Styles */
-.quantum-input {
-  background: rgba(10, 16, 35, 0.7);
-  border: 1px solid rgba(0, 163, 255, 0.25);
-  color: #F8FAFC;
-  transition: all 0.3s ease;
-}
-
-.quantum-input:focus {
-  outline: none;
-  background: rgba(14, 22, 46, 0.9);
-  border-color: #00E5FF;
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-}
-
-/* Code Badge */
-.code-tag {
+/* Template Placeholder Tag */
+.template-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px dashed #F59E0B;
+  border-radius: 6px;
   font-family: var(--font-code);
-  font-size: 0.825rem;
-  background: rgba(0, 163, 255, 0.1);
-  color: #00E5FF;
-  border: 1px solid rgba(0, 163, 255, 0.25);
-  border-radius: 4px;
-  padding: 2px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.template-box {
+  background: #FFFBEB;
+  border: 1.5px dashed #F59E0B;
+  border-radius: 0.75rem;
+  color: #78350F;
+  font-family: var(--font-code);
+}
+
+/* Clean Input Style */
+.clean-input {
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  color: #0F172A;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.clean-input:focus {
+  outline: none;
+  border-color: #00509D;
+  box-shadow: 0 0 0 3px rgba(0, 80, 157, 0.15);
+}
+
+/* Clean Footer */
+.flyer-footer {
+  background: #002868;
+  color: #FFFFFF;
+  border-top: 4px solid #FFB703;
 }

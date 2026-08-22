@@ -1,58 +1,21 @@
 /**
- * Qiskit Fall Fest ITS 2026 - Schedule & Countdown Script
+ * Qiskit Fall Fest ITS 2026 - Clean Schedule Script (Lightweight)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Countdown Timer (Target: October 15, 2026)
-  const targetDate = new Date('2026-10-15T09:00:00+07:00').getTime();
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    const daysEl = document.getElementById('cd-days');
-    const hoursEl = document.getElementById('cd-hours');
-    const minutesEl = document.getElementById('cd-minutes');
-    const secondsEl = document.getElementById('cd-seconds');
-
-    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-
-    if (distance < 0) {
-      daysEl.textContent = '00';
-      hoursEl.textContent = '00';
-      minutesEl.textContent = '00';
-      secondsEl.textContent = '00';
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    daysEl.textContent = String(days).padStart(2, '0');
-    hoursEl.textContent = String(hours).padStart(2, '0');
-    minutesEl.textContent = String(minutes).padStart(2, '0');
-    secondsEl.textContent = String(seconds).padStart(2, '0');
-  }
-
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-
-  // 2. Schedule Category Filter
+  // 1. Schedule Category Filter
   const filterBtns = document.querySelectorAll('.schedule-filter-btn');
   const eventCards = document.querySelectorAll('.timeline-event-card');
 
   if (filterBtns.length > 0 && eventCards.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Active button styling
         filterBtns.forEach(b => {
-          b.classList.remove('bg-cyan-500', 'text-black', 'border-cyan-400');
-          b.classList.add('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
+          b.classList.remove('bg-[#002868]', 'text-white', 'border-[#002868]');
+          b.classList.add('bg-white', 'text-slate-700', 'border-slate-300');
         });
-        btn.classList.remove('bg-slate-800/80', 'text-slate-300', 'border-slate-700');
-        btn.classList.add('bg-cyan-500', 'text-black', 'border-cyan-400');
+        btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-300');
+        btn.classList.add('bg-[#002868]', 'text-white', 'border-[#002868]');
 
         const category = btn.getAttribute('data-filter');
 
@@ -60,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const cardCategory = card.getAttribute('data-category');
           if (category === 'all' || cardCategory === category) {
             card.style.display = 'block';
-            card.classList.add('animate-fadeIn');
           } else {
             card.style.display = 'none';
           }
@@ -69,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Event Detail Modal
+  // 2. Event Detail Modal
   const modal = document.getElementById('event-detail-modal');
   const modalTitle = document.getElementById('modal-event-title');
   const modalDate = document.getElementById('modal-event-date');
