@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event & Jadwal - Qiskit Fall Fest ITS 2026</title>
+  <meta name="description" content="Jadwal lengkap workshop, training series, hackathon komputasi kuantum, dan keynote speaker Qiskit Fall Fest 2026 di Institut Teknologi Sepuluh Nopember (ITS).">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/qiskitfallfest2026_transparent_square.png">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            its: {
+              navy: '#021431',
+              dark: '#01215b',
+              primary: '#013880',
+              royal: '#0C64C2',
+              cyan: '#00A3FF',
+              bright: '#00E5FF',
+              gold: '#FFC72C',
+            },
+            quantum: {
+              magenta: '#FF7EB6',
+              pink: '#EE5396',
+              purple: '#8A3FFC',
+              darkPurple: '#6929C4',
+              bg: '#070B19',
+              card: '#0E162E',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles & Animations -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body class="bg-[#070B19] text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
+
+  <!-- Ambient Light Blobs -->
+  <div class="fixed top-20 right-10 w-96 h-96 bg-cyan-600/15 rounded-full blur-3xl pointer-events-none ambient-blob-1 z-0"></div>
+  <div class="fixed bottom-20 left-10 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none ambient-blob-2 z-0"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Brand / Logos -->
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026" class="h-12 w-12 object-contain filter drop-shadow-[0_0_8px_rgba(0,163,255,0.6)]">
+          <div class="h-8 w-[1px] bg-slate-700 mx-1 hidden sm:block"></div>
+          <img src="assets/images/its-logo-white.svg" alt="Institut Teknologi Sepuluh Nopember" class="h-8 w-auto object-contain hidden sm:block">
+          <div class="flex flex-col">
+            <div class="flex items-center space-x-2">
+              <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">Qiskit Fall Fest</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-cyan-300 font-mono font-bold">2026</span>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">Institut Teknologi Sepuluh Nopember</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link py-2 text-sm font-medium">Home</a>
+          <a href="event.html" class="nav-link py-2 text-sm font-medium active">Event & Jadwal</a>
+          <a href="about.html" class="nav-link py-2 text-sm font-medium">About & Venue</a>
+          <a href="login.html" class="btn-quantum-primary px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center space-x-2">
+            <span>Portal Peserta</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="md:hidden flex items-center">
+          <button type="button" id="mobile-menu-button" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 focus:outline-none" aria-label="Menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-5 pt-2 border-t border-slate-800/80 space-y-2">
+        <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50">Home</a>
+        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50 active">Event & Jadwal</a>
+        <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50">About & Venue</a>
+        <a href="login.html" class="btn-quantum-primary block text-center px-4 py-2.5 rounded-xl text-base font-semibold mt-3">Portal Peserta / Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow z-10">
+
+    <!-- PAGE HEADER -->
+    <section class="py-16 lg:py-20 relative border-b border-slate-800/80 bg-gradient-to-b from-slate-900/40 to-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-cyan-300 text-xs font-mono font-semibold mb-4">
+          <span>📅 AGENDA RESMI • SEPTEMBER - NOVEMBER 2026</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Jadwal Acara & <span class="shimmer-text">Quantum Hackathon</span>
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+          Ikuti seluruh rangkaian pembelajaran komputasi kuantum dari tahap fundamental, sesi latihan intensif, hingga kompetisi hackathon nasional.
+        </p>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-2.5 mt-8 max-w-2xl mx-auto">
+          <button type="button" class="schedule-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-cyan-500 text-black border-cyan-400" data-filter="all">
+            Semua Acara (8)
+          </button>
+          <button type="button" class="schedule-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500" data-filter="preevent">
+            Pre-Event
+          </button>
+          <button type="button" class="schedule-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500" data-filter="training">
+            Training Series
+          </button>
+          <button type="button" class="schedule-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500" data-filter="hackathon">
+            Hackathon
+          </button>
+          <button type="button" class="schedule-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500" data-filter="ceremony">
+            Ceremony
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SCHEDULE SECTION -->
+    <section class="py-16 lg:py-24 relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="space-y-6">
+          
+          <!-- Event 1: Pre-Event -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-blue-500/20 glass-panel-hover" data-category="preevent">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-blue-500/20 text-cyan-300 border border-blue-500/40">Pre-Event Ceremony</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Hybrid (Menara Sains ITS & Zoom)</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Workshop Pre-Event: "The Future of Quantum Computing in Indonesia"</h3>
+                <p class="text-slate-400 text-sm">
+                  Pengenalan inisiatif nasional komputasi kuantum, gambaran silabus Fall Fest 2026, dan sesi pembuka bersama pimpinan ITS dan IBM Quantum.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-1">
+                  <span>📅 30 September 2026</span>
+                  <span>⏰ 13:00 - 17:00 WIB</span>
+                  <span>🎙 Pembicara: Pimpinan ITS & IBM Quantum ASEAN</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 flex items-center">
+                <button class="view-detail-btn btn-quantum-outline px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold w-full md:w-auto"
+                  data-title="Workshop Pre-Event: The Future of Quantum Computing in Indonesia"
+                  data-date="Selasa, 30 September 2026"
+                  data-time="13:00 - 17:00 WIB"
+                  data-type="Hybrid: Menara Sains ITS Lantai 2 / Zoom Live"
+                  data-desc="Workshop pembuka untuk memperkenalkan dunia komputasi kuantum kepada civitas akademika ITS dan publik. Anda akan mempelajari peta jalan pengembangan hardware dan software kuantum, ekosistem Qiskit, serta persiapan mengikuti Training Series dan Hackathon 2026."
+                  data-speaker="Rektorat ITS, Julian Tan (IBM Quantum ASEAN), Prof. Andriyan B. Suksmono (Indonesian Quantum Initiative)">
+                  Detail Sesi 🔍
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2: Official Opening -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-purple-500/20 glass-panel-hover" data-category="ceremony">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40">Opening Session</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Online & Live Stream</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Opening Session and Community Engagement by IBM Quantum</h3>
+                <p class="text-slate-400 text-sm">
+                  Peluncuran resmi Qiskit Fall Fest ITS 2026, pembagian akses IBM Quantum Platform Cloud, dan pembentukan grup komunitas belajar.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-1">
+                  <span>📅 2 Oktober 2026</span>
+                  <span>⏰ 14:00 - 16:30 WIB</span>
+                  <span>🎙 IBM Quantum Educators Team</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 flex items-center">
+                <button class="view-detail-btn btn-quantum-outline px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold w-full md:w-auto"
+                  data-title="Opening Session and Community Engagement"
+                  data-date="Jumat, 2 Oktober 2026"
+                  data-time="14:00 - 16:30 WIB"
+                  data-type="Online via Zoom & YouTube Live"
+                  data-desc="Sesi orientasi peserta, aktivasi akun IBM Quantum, pengenalan sistem pengumpulan tugas, dan penjelasan peraturan Hackathon 2026. Seluruh peserta yang terdaftar wajib mengikuti sesi ini."
+                  data-speaker="IBM Quantum Educators & Panitia Qiskit Fall Fest ITS">
+                  Detail Sesi 🔍
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3: Training 1 -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-emerald-500/20 glass-panel-hover" data-category="training">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Online Training 1</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Hands-on Workshop</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Dasar Sirkuit Kuantum & Qiskit 1.x SDK</h3>
+                <p class="text-slate-400 text-sm">
+                  Representasi Qubit pada Bloch Sphere, gerbang kuantum (Hadamard, Pauli, CNOT, Phase Gates), dan pembuatan sirkuit Bell State.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-1">
+                  <span>📅 9 Oktober 2026</span>
+                  <span>⏰ 13:30 - 16:00 WIB</span>
+                  <span>🎙 Tim Lab Fisika Komputasi ITS & Qiskit Advocates</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 flex items-center">
+                <button class="view-detail-btn btn-quantum-outline px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold w-full md:w-auto"
+                  data-title="Online Training 1: Dasar Sirkuit Kuantum & Qiskit 1.x SDK"
+                  data-date="Jumat, 9 Oktober 2026"
+                  data-time="13:30 - 16:00 WIB"
+                  data-type="Hands-on Interactive Lab (Jupyter Notebook / Google Colab)"
+                  data-desc="Materi meliputi: Vektor keadaan (statevectors), superposisi, interferensi, entanglement kuantum, pengukuran berbasis komputasi, dan eksekusi sirkuit pada AerSimulator."
+                  data-speaker="Qiskit Certified Instructors & Lab Fisika Komputasi ITS">
+                  Detail Sesi 🔍
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4: Training 2 -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-emerald-500/20 glass-panel-hover" data-category="training">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Online Training 2</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Algoritma Kuantum</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Algoritma Kuantum: Grover's Search & VQE</h3>
+                <p class="text-slate-400 text-sm">
+                  Implementasi algoritma pencarian kuantum Grover untuk akselerasi database dan Variational Quantum Eigensolver (VQE) untuk simulasi molekuler.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-1">
+                  <span>📅 16 Oktober 2026</span>
+                  <span>⏰ 13:30 - 16:00 WIB</span>
+                  <span>🎙 Quantum Algorithm Researchers</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 flex items-center">
+                <button class="view-detail-btn btn-quantum-outline px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold w-full md:w-auto"
+                  data-title="Online Training 2: Algoritma Kuantum (Grover & VQE)"
+                  data-date="Jumat, 16 Oktober 2026"
+                  data-time="13:30 - 16:00 WIB"
+                  data-type="Advanced Hands-on Lab"
+                  data-desc="Pelajari konstruksi Oracle dan Diffuser pada algoritma Grover, serta arsitektur Hybrid Quantum-Classical menggunakan VQE dan QAOA untuk optimasi kombinatorial."
+                  data-speaker="Tim Riset Komputasi Kuantum ITS & ITB">
+                  Detail Sesi 🔍
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5: Training 3 -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-emerald-500/20 glass-panel-hover" data-category="training">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Online Training 3</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Quantum Hardware & Runtime</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Qiskit Runtime Primitives & Error Mitigation</h3>
+                <p class="text-slate-400 text-sm">
+                  Teknik mengeksekusi sirkuit pada prosesor kuantum nyata IBM (IBM Eagle 127-qubit) dengan Sampler, Estimator, dan Zero-Noise Extrapolation (ZNE).
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-1">
+                  <span>📅 23 Oktober 2026</span>
+                  <span>⏰ 13:30 - 16:00 WIB</span>
+                  <span>🎙 IBM Quantum Technical Specialists</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 flex items-center">
+                <button class="view-detail-btn btn-quantum-outline px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold w-full md:w-auto"
+                  data-title="Online Training 3: Qiskit Runtime & Error Mitigation"
+                  data-date="Jumat, 23 Oktober 2026"
+                  data-time="13:30 - 16:00 WIB"
+                  data-type="Hands-on Real QPU Execution"
+                  data-desc="Panduan lengkap penggunaan Qiskit Runtime Primitives V2, optimasi transpiler passes, peredaman derau (error mitigation), dan persiapan menuju Hackathon."
+                  data-speaker="IBM Quantum Global Team">
+                  Detail Sesi 🔍
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 6: Hackathon Begins -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-pink-500/30 glass-panel-hover bg-gradient-to-r from-pink-950/20 to-purple-950/20" data-category="hackathon">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40 animate-pulse">🚀 HACKATHON BEGINS</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Kompetisi 10 Hari</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Kick-Off Qiskit Fall Fest Hackathon 2026</h3>
+                <p class="text-slate-300 text-sm">
+                  Rilis problem statement resmi: Peserta membentuk tim (1-4 orang) untuk menyelesaikan studi kasus nyata dengan komputasi kuantum.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-pink-300 pt-1">
+                  <span>📅 10 November 2026</span>
+                  <span>⏰ 09:00 WIB</span>
+                  <span>🏆 Total Hadiah: Rp 25.000.000</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 flex items-center">
+                <a href="login.html" class="btn-quantum-magenta px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold w-full md:w-auto text-center">
+                  Daftar Tim Hackathon ★
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 7: Hackathon Submission & Judging -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-pink-500/20 glass-panel-hover" data-category="hackathon">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40">Submission Deadline</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Online Submission</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Batas Akhir Pengumpulan Solusi Hackathon</h3>
+                <p class="text-slate-400 text-sm">
+                  Pengumpulan repositori GitHub, laporan teknis, dan video demo sirkuit kuantum sebelum batas waktu penilaian dewan juri internasional.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-slate-400 pt-1">
+                  <span>📅 20 November 2026</span>
+                  <span>⏰ Pukul 12:00 WIB (Tepat)</span>
+                  <span>⚖ Dewan Juri: ITS, IBM Quantum, IQI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 8: Closing & Awarding -->
+          <div class="timeline-event-card spotlight-card glass-panel rounded-2xl p-6 sm:p-8 border border-amber-500/30 glass-panel-hover" data-category="ceremony">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">Grand Final & Awarding</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">Hybrid (Auditorium ITS & Live)</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">Closing Ceremony & Pengumuman Pemenang Hackathon 2026</h3>
+                <p class="text-slate-400 text-sm">
+                  Presentasi Top 5 Finalis, Keynote Penutup, dan penganugerahan hadiah juara, e-sertifikat IBM, serta medali penghargaan ITS.
+                </p>
+                <div class="flex flex-wrap gap-4 text-xs font-mono text-amber-300 pt-1">
+                  <span>📅 20 November 2026</span>
+                  <span>⏰ 14:00 - 17:30 WIB</span>
+                  <span>📍 Auditorium Pascasarjana ITS / Zoom Live</span>
+                </div>
+              </div>
+              <div class="flex-shrink-0 flex items-center">
+                <button class="view-detail-btn btn-quantum-outline px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold w-full md:w-auto"
+                  data-title="Closing Ceremony & Awarding Qiskit Fall Fest ITS 2026"
+                  data-date="Jumat, 20 November 2026"
+                  data-time="14:00 - 17:30 WIB"
+                  data-type="Hybrid: Auditorium Pascasarjana ITS & Live Stream"
+                  data-desc="Puncak perayaan Qiskit Fall Fest 2026 dengan sesi pitching finalis terbaik, pengumuman juara 1, 2, 3, dan Best Student Innovation, serta penyerahan total hadiah 25 juta rupiah."
+                  data-speaker="Pimpinan ITS, IBM Quantum Executives, dan Dewan Juri Nasional">
+                  Detail Sesi 🔍
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HACKATHON TRACKS & PRIZE POOL SECTION -->
+    <section class="py-16 bg-slate-900/50 border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-mono font-bold uppercase mb-3">
+            🏆 Hadiah & Kategori Tantangan
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Tiga Track Kompetisi Hackathon</h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2">
+            Pilih satu dari tiga bidang tantangan komputasi kuantum di bawah ini untuk solusi inovatif tim Anda.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          
+          <!-- Track 1 -->
+          <div class="tilt-card glass-panel rounded-2xl p-6 border border-cyan-500/30">
+            <div class="text-3xl mb-4">🧠</div>
+            <h3 class="text-lg font-bold text-white mb-2">Track 1: Quantum Machine Learning (QML)</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Pemanfaatan Quantum Neural Networks (QNN) dan Variational Quantum Classifiers (VQC) untuk klasifikasi data biomedis dan pengenalan pola berdimensi tinggi.
+            </p>
+            <span class="code-tag">Qiskit Machine Learning</span>
+          </div>
+
+          <!-- Track 2 -->
+          <div class="tilt-card glass-panel rounded-2xl p-6 border border-purple-500/30">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 class="text-lg font-bold text-white mb-2">Track 2: Quantum Optimization & Logistics</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Penyelesaian masalah Traveling Salesperson (TSP), pemodelan rute pelabuhan maritim Surabaya, atau portofolio finansial dengan QAOA.
+            </p>
+            <span class="code-tag">Qiskit Optimization</span>
+          </div>
+
+          <!-- Track 3 -->
+          <div class="tilt-card glass-panel rounded-2xl p-6 border border-pink-500/30">
+            <div class="text-3xl mb-4">🧪</div>
+            <h3 class="text-lg font-bold text-white mb-2">Track 3: Quantum Chemistry Simulation</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Simulasi energi dasar molekul baterai kendaraan listrik dan material katalis energi terbarukan menggunakan algoritma VQE.
+            </p>
+            <span class="code-tag">Qiskit Nature</span>
+          </div>
+
+        </div>
+
+        <!-- Prize Pool Table / Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
+          
+          <div class="glass-panel p-6 rounded-2xl border border-slate-700">
+            <div class="text-2xl font-bold text-slate-300 mb-1">🥈 Juara 2</div>
+            <div class="text-3xl font-extrabold text-cyan-400 font-mono mb-2">Rp 8.000.000</div>
+            <div class="text-xs text-slate-400">Sertifikat IBM + Medali ITS</div>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border-2 border-amber-400 shadow-xl shadow-amber-500/10 scale-105 bg-gradient-to-b from-amber-950/20 to-slate-900/80">
+            <div class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest mb-1">👑 JUARA 1 UTAMA</div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-amber-300 font-mono mb-2">Rp 12.000.000</div>
+            <div class="text-xs text-slate-300">Piala Rektor ITS + IBM Quantum Champion Badges</div>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-slate-700">
+            <div class="text-2xl font-bold text-slate-300 mb-1">🥉 Juara 3</div>
+            <div class="text-3xl font-extrabold text-pink-400 font-mono mb-2">Rp 5.000.000</div>
+            <div class="text-xs text-slate-400">Sertifikat IBM + Medali ITS</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INVITED SPEAKERS SECTION -->
+    <section class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-cyan-300 text-xs font-mono font-bold uppercase mb-3">
+            🎙 Narasumber & Mentor Ahli
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Lineup Pembicara Qiskit Fall Fest 2026</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Speaker 1 -->
+          <div class="tilt-card spotlight-card glass-panel rounded-2xl p-6 border border-blue-500/20 text-center flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 p-1 mb-4">
+              <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-3xl font-bold text-cyan-300">
+                ITS
+              </div>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1">Pimpinan ITS</h4>
+            <p class="text-xs text-cyan-400 font-mono mb-2">Institut Teknologi Sepuluh Nopember</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Pengarah pengembangan kurikulum sains data, riset fisika modern, dan teknologi kuantum di lingkungan ITS Surabaya.
+            </p>
+          </div>
+
+          <!-- Speaker 2 -->
+          <div class="tilt-card spotlight-card glass-panel rounded-2xl p-6 border border-purple-500/20 text-center flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 p-1 mb-4">
+              <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-3xl font-bold text-purple-300">
+                IBM
+              </div>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1">Julian Tan</h4>
+            <p class="text-xs text-purple-400 font-mono mb-2">IBM Quantum ASEAN / Global Lead</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Eksekutif pengembangan bisnis dan ekosistem komputasi kuantum IBM untuk kawasan Asia Tenggara dan India.
+            </p>
+          </div>
+
+          <!-- Speaker 3 -->
+          <div class="tilt-card spotlight-card glass-panel rounded-2xl p-6 border border-emerald-500/20 text-center flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-600 to-teal-400 p-1 mb-4">
+              <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-3xl font-bold text-emerald-300">
+                IQI
+              </div>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1">Prof. Andriyan B. Suksmono</h4>
+            <p class="text-xs text-emerald-400 font-mono mb-2">Conceptor Indonesian Quantum Initiative</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Guru Besar STEI Institut Teknologi Bandung (ITB) dan penggagas inisiatif riset kuantum nasional (IQI).
+            </p>
+          </div>
+
+          <!-- Speaker 4 -->
+          <div class="tilt-card spotlight-card glass-panel rounded-2xl p-6 border border-pink-500/20 text-center flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-pink-600 to-rose-400 p-1 mb-4">
+              <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-3xl font-bold text-pink-300">
+                AIC
+              </div>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1">Assoc. Prof. Dr. Khoirul Anwar</h4>
+            <p class="text-xs text-pink-400 font-mono mb-2">Director of AICOMS</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Pakar komunikasi nirkabel dan komputasi cerdas lanjut, kolaborator pengembangan teknologi kuantum nasional.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EVENT DETAIL MODAL (Pop-up) -->
+  <div id="event-detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="glass-panel max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-cyan-500/40 relative shadow-2xl animate-fadeIn">
+      
+      <!-- Close Button -->
+      <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" aria-label="Tutup">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="space-y-4">
+        <div class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-cyan-300 text-xs font-mono font-bold" id="modal-event-type">
+          Detail Sesi
+        </div>
+
+        <h3 id="modal-event-title" class="text-2xl font-bold text-white">Judul Sesi Acara</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 py-3 border-y border-slate-800 text-xs font-mono text-slate-300">
+          <div>📅 <span id="modal-event-date">Tanggal</span></div>
+          <div>⏰ <span id="modal-event-time">Waktu</span></div>
+        </div>
+
+        <div class="text-sm text-slate-300 leading-relaxed space-y-2">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">Deskripsi Modul:</h4>
+          <p id="modal-event-desc">Deskripsi lengkap dari sesi workshop atau jadwal.</p>
+        </div>
+
+        <div class="text-xs text-slate-400 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+          <span class="text-slate-200 font-semibold">🎙 Narasumber / Instruktur:</span>
+          <p id="modal-event-speaker" class="mt-1 font-mono text-cyan-300">-</p>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-3">
+          <a href="login.html" class="btn-quantum-primary px-6 py-2.5 rounded-xl text-sm font-semibold">
+            Daftar Ikuti Sesi Ini 🚀
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-[#040814] text-slate-400 text-sm relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center space-x-3">
+            <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Badge 2026" class="h-10 w-10 object-contain">
+            <img src="assets/images/its-logo-white.svg" alt="ITS Surabaya" class="h-7 w-auto">
+          </div>
+          <h4 class="text-white font-bold text-base">Qiskit Fall Fest ITS 2026</h4>
+          <p class="text-slate-400 text-sm leading-relaxed max-w-md">
+            Festival komputasi kuantum tingkat universitas terbesar di Indonesia, diselenggarakan oleh Institut Teknologi Sepuluh Nopember bekerjasama dengan IBM Quantum.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <h5 class="text-white font-semibold text-sm uppercase tracking-wider font-mono">Navigasi</h5>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a></li>
+            <li><a href="event.html" class="hover:text-cyan-400 transition-colors">Event & Jadwal</a></li>
+            <li><a href="about.html" class="hover:text-cyan-400 transition-colors">Tentang & Venue ITS</a></li>
+            <li><a href="login.html" class="hover:text-cyan-400 transition-colors">Portal Peserta</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h5 class="text-white font-semibold text-sm uppercase tracking-wider font-mono">Hubungi Kami</h5>
+          <ul class="space-y-2 text-sm">
+            <li>📧 <a href="mailto:qiskit@its.ac.id" class="hover:text-cyan-400">qiskit@its.ac.id</a></li>
+            <li>🌐 <a href="https://www.its.ac.id" target="_blank" rel="noopener" class="hover:text-cyan-400">www.its.ac.id</a></li>
+            <li>📍 Kampus ITS Sukolilo, Surabaya</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <p>© 2026 Qiskit Fall Fest ITS • Institut Teknologi Sepuluh Nopember & IBM Quantum.</p>
+        <p>Qiskit® adalah merek dagang terdaftar dari IBM Corporation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script src="assets/js/quantum-canvas.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/schedule.js"></script>
+</body>
+</html>
