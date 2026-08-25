@@ -39,6 +39,19 @@
   padding: 0;
 }
 
+/* Canvas paling luar: jika ditarik/overscroll di Android/iOS, warna ini yang kelihatan */
+html {
+  background-color: #002868; /* Sama persis dengan warna footer */
+  height: 100%;
+}
+
+/* Konten utama web kamu */
+body {
+  min-height: 100dvh;
+  background-color: #F8FAFD; /* Warna latar utama body */
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: var(--font-main);
