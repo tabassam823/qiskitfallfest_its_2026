@@ -69,22 +69,20 @@
   const CHALLENGES = [
     {
       level: 1,
-      title: "Tantangan 1: Qubit Flip (Pauli-X)",
-      objective: "Ubah keadaan qubit q[0] dari Naik (|0⟩) menjadi Turun (|1⟩).",
-      hint: "Gunakan gerbang Pauli-X (NOT Gate) pada q[0] untuk membalik keadaan spin kuantum.",
+      title: "Challenge 1: Qubit Flip (Pauli-X)",
+      objective: "Flip qubit q[0] from Spin Up (|0⟩) to Spin Down (|1⟩).",
+      hint: "Place a Pauli-X gate (NOT Gate) on wire q[0] to flip its quantum spin state.",
       numQubitsNeeded: 1,
       checkWin: (probs, state) => {
-        // Target: P(|1..>) on qubit 0 is 100% -> basis states with q0=1
-        // In 3-qubit basis (q0 is MSB or LSB, let's treat q0 as first qubit: binary 1xx -> states 4,5,6,7)
         const p1_q0 = probs[4] + probs[5] + probs[6] + probs[7];
         return p1_q0 > 0.98;
       }
     },
     {
       level: 2,
-      title: "Tantangan 2: Quantum Superposition (Hadamard)",
-      objective: "Buat qubit q[0] berada dalam keadaan superposisi |+⟩ (50% Naik |0⟩ dan 50% Turun |1⟩).",
-      hint: "Tempatkan gerbang H (Hadamard) pada q[0] untuk menciptakan superposisi merata.",
+      title: "Challenge 2: Quantum Superposition (Hadamard)",
+      objective: "Put qubit q[0] into an equal superposition state |+⟩ (50% Up |0⟩ and 50% Down |1⟩).",
+      hint: "Place an H (Hadamard) gate on wire q[0] to create a 50/50 quantum superposition.",
       numQubitsNeeded: 1,
       checkWin: (probs, state) => {
         const p0_q0 = probs[0] + probs[1] + probs[2] + probs[3];
@@ -94,12 +92,11 @@
     },
     {
       level: 3,
-      title: "Tantangan 3: Phase Inversion (Keadaan |−⟩)",
-      objective: "Ciptakan keadaan superposisi fase terbalik |−⟩ = (|0⟩ − |1⟩)/√2 pada q[0].",
-      hint: "Pasang gerbang H lalu ikuti dengan gerbang Z pada q[0].",
+      title: "Challenge 3: Phase Inversion (State |−⟩)",
+      objective: "Create the inverted phase superposition state |−⟩ = (|0⟩ − |1⟩)/√2 on wire q[0].",
+      hint: "Add an H gate followed immediately by a Z (Phase Flip) gate on wire q[0].",
       numQubitsNeeded: 1,
       checkWin: (probs, state) => {
-        // State 0 amplitude ~ +1/√2, State 4 amplitude ~ -1/√2
         const s0 = state[0];
         const s4 = state[4];
         const isSuperposition = Math.abs(probs[0] - 0.5) < 0.05 && Math.abs(probs[4] - 0.5) < 0.05;
@@ -109,14 +106,11 @@
     },
     {
       level: 4,
-      title: "Tantangan 4: Bell State Entanglement (|Φ⁺⟩)",
-      objective: "Ciptakan jalinan kuantum (Entanglement) sempurna antara q[0] dan q[1] menjadi (|00⟩ + |11⟩)/√2.",
-      hint: "Pasang gerbang H pada q[0], lalu pasang gerbang CNOT dengan kontrol q[0] dan target q[1].",
+      title: "Challenge 4: Bell State Entanglement (|Φ⁺⟩)",
+      objective: "Create a maximally entangled Bell State between q[0] and q[1]: (|00⟩ + |11⟩)/√2.",
+      hint: "Place an H gate on q[0], then add a CNOT gate with control on q[0] and target on q[1].",
       numQubitsNeeded: 2,
       checkWin: (probs, state) => {
-        // Bell state |000> and |110> have 50% probability each (q0=0, q1=0 -> 0; q0=1, q1=1 -> 6 or 4+2)
-        // With q0, q1, q2 indices:
-        // |000> is 0, |110> is 6 (q0=1, q1=1, q2=0)
         const p00 = probs[0];
         const p11 = probs[6];
         const otherP = probs.reduce((sum, p, i) => (i !== 0 && i !== 6 ? sum + p : sum), 0);
@@ -125,20 +119,19 @@
     },
     {
       level: 5,
-      title: "Tantangan 5: Quantum Cascade Inversion (|111⟩)",
-      objective: "Ubah seluruh 3 qubit (q[0], q[1], q[2]) menjadi keadaan Turun |111⟩ (Probabilitas 100%).",
-      hint: "Gunakan X pada q[0], lalu CNOT dari q[0] ke q[1], dan CNOT dari q[1] ke q[2] (atau pasang X pada ketiga qubit).",
+      title: "Challenge 5: Quantum Cascade Inversion (|111⟩)",
+      objective: "Flip all 3 qubits (q[0], q[1], q[2]) to pure Spin Down |111⟩ (100% probability).",
+      hint: "Use Pauli-X gates across all 3 wires or cascade CNOT gates down the circuit.",
       numQubitsNeeded: 3,
       checkWin: (probs, state) => {
-        // State |111> is index 7
         return probs[7] > 0.98;
       }
     },
     {
       level: 0,
-      title: "Mode Bebas (Sandbox Mode)",
-      objective: "Eksperimen bebas merakit sirkuit kuantum 3-qubit apa saja dan ekspor kode Qiskit Python.",
-      hint: "Tambahkan kombinasi gerbang X, H, Z, CNOT, atau SWAP untuk mengamati perubahan probabilitas dan spin kuantum.",
+      title: "Sandbox Mode (Free Experimentation)",
+      objective: "Freely assemble any 3-qubit circuit and export clean Qiskit 1.x Python code.",
+      hint: "Combine X, H, Z, S, CNOT, or SWAP gates to observe how amplitudes and spin states evolve in real-time.",
       numQubitsNeeded: 3,
       checkWin: () => false
     }
@@ -455,19 +448,19 @@
       // Pure Spin Up |0>
       arrowEl.textContent = '↑';
       arrowEl.className = 'spin-arrow text-4xl text-emerald-400 font-bold transition-all duration-300';
-      labelEl.textContent = 'Naik (|0⟩)';
+      labelEl.textContent = 'Spin Up (|0⟩)';
       labelEl.className = 'spin-state-text text-sm font-bold text-emerald-300 font-mono';
     } else if (Math.abs(p1 - 1) < 0.02) {
       // Pure Spin Down |1>
       arrowEl.textContent = '↓';
       arrowEl.className = 'spin-arrow text-4xl text-pink-400 font-bold transition-all duration-300';
-      labelEl.textContent = 'Turun (|1⟩)';
+      labelEl.textContent = 'Spin Down (|1⟩)';
       labelEl.className = 'spin-state-text text-sm font-bold text-pink-300 font-mono';
     } else {
       // Superposition
       arrowEl.textContent = '⥮';
       arrowEl.className = 'spin-arrow text-4xl text-purple-400 font-bold animate-pulse transition-all duration-300';
-      labelEl.textContent = 'Superposisi (|ψ⟩)';
+      labelEl.textContent = 'Superposition (|ψ⟩)';
       labelEl.className = 'spin-state-text text-sm font-bold text-purple-300 font-mono';
     }
 
@@ -509,7 +502,7 @@
     }
 
     lines.push('\nqc.measure_all()');
-    lines.push('# Eksekusi: result = sampler.run([qc]).result()');
+    lines.push('# Run with: result = sampler.run([qc]).result()');
     codeBox.textContent = lines.join('\n');
   }
 
@@ -521,7 +514,7 @@
     if (!challenge || challenge.level === 0) {
       if (winBadge) {
         winBadge.className = 'px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700';
-        winBadge.textContent = 'Mode Eksperimen Bebas';
+        winBadge.textContent = 'Free Sandbox Mode';
       }
       return;
     }
@@ -531,7 +524,7 @@
     if (won) {
       if (winBadge) {
         winBadge.className = 'px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400 shadow-lg shadow-emerald-500/20 animate-bounce';
-        winBadge.textContent = '🎉 TARGET TERCAPAI!';
+        winBadge.textContent = '🎉 TARGET REACHED!';
       }
       if (winModal && winModal.classList.contains('hidden')) {
         winModal.classList.remove('hidden');
@@ -540,7 +533,7 @@
     } else {
       if (winBadge) {
         winBadge.className = 'px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40';
-        winBadge.textContent = '⏳ Target Belum Tercapai';
+        winBadge.textContent = '⏳ Target Not Yet Reached';
       }
     }
   }
@@ -557,7 +550,7 @@
 
     if (titleEl && challenge) titleEl.textContent = challenge.title;
     if (objEl && challenge) objEl.textContent = challenge.objective;
-    if (hintEl && challenge) hintEl.textContent = `💡 Petunjuk: ${challenge.hint}`;
+    if (hintEl && challenge) hintEl.textContent = `💡 Hint: ${challenge.hint}`;
 
     // Update level buttons
     const levelBtns = document.querySelectorAll('.level-select-btn');
@@ -613,8 +606,8 @@
       copyCodeBtn.addEventListener('click', () => {
         const code = document.getElementById('qiskit-python-code').textContent;
         navigator.clipboard.writeText(code).then(() => {
-          copyCodeBtn.textContent = 'Tersalin! ✔';
-          setTimeout(() => { copyCodeBtn.textContent = 'Salin Kode 📋'; }, 2000);
+          copyCodeBtn.textContent = 'Copied! ✔';
+          setTimeout(() => { copyCodeBtn.textContent = 'Copy Code 📋'; }, 2000);
         });
       });
     }

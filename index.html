@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" data-font="outfit">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Qiskit Fall Fest ITS 2026 - Institut Teknologi Sepuluh Nopember</title>
-  <meta name="description" content="Qiskit Fall Fest 2026 diselenggarakan oleh Institut Teknologi Sepuluh Nopember (ITS) berkolaborasi dengan IBM Quantum.">
+  <meta name="description" content="Official IBM Quantum Fall Fest 2026 hosted by Institut Teknologi Sepuluh Nopember (ITS). Join hands-on workshops, expert talks, and the national quantum hackathon.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/qiskitfallfest2026_transparent_square.png">
@@ -30,8 +30,9 @@
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['var(--font-main)', '"Outfit"', '"DM Sans"', 'system-ui', 'sans-serif'],
+            mono: ['var(--font-code)', '"JetBrains Mono"', 'monospace'],
+            heading: ['var(--font-heading)', '"Outfit"', 'sans-serif'],
           }
         }
       }
@@ -42,7 +43,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
-<body class="bg-[#F8FAFD] text-slate-900 min-h-screen flex flex-col selection:bg-amber-300 selection:text-blue-950 quantum-subtle-bg">
+<body class="bg-[#F8FAFD] text-slate-900 min-h-screen flex flex-col selection:bg-amber-300 selection:text-blue-950 quantum-subtle-bg font-sans">
 
   <!-- Header / Navigation (Clean White & Navy) -->
   <header class="sticky top-0 z-50 flyer-nav">
@@ -66,10 +67,11 @@
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
           <a href="index.html" class="nav-link py-2 text-sm active">Home</a>
-          <a href="event.html" class="nav-link py-2 text-sm">Event & Jadwal</a>
+          <a href="event.html" class="nav-link py-2 text-sm">Events & Schedule</a>
           <a href="about.html" class="nav-link py-2 text-sm">About & Venue</a>
+          <a href="playground.html" class="nav-link py-2 text-sm">Playground ⚛</a>
           <a href="login.html" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2">
-            <span>Portal Peserta</span>
+            <span>Participant Portal</span>
             <svg class="w-4 h-4 text-[#FFB703]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
@@ -89,9 +91,10 @@
       <!-- Mobile Dropdown Menu -->
       <div id="mobile-menu" class="hidden lg:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
         <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium active">Home</a>
-        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Event & Jadwal</a>
+        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Events & Schedule</a>
         <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About & Venue</a>
-        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Portal Peserta / Login</a>
+        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground ⚛</a>
+        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Participant Portal / Register</a>
       </div>
     </nav>
   </header>
@@ -108,7 +111,7 @@
           <div class="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-6 px-4 py-3 sm:px-10 sm:py-4 bg-white rounded-3xl sm:rounded-full border border-slate-200 shadow-md max-w-full overflow-hidden">
             <img src="assets/images/its-logo-blue.svg" alt="ITS" class="h-7 sm:h-10 w-auto object-contain">
             <div class="h-5 sm:h-7 w-[1.5px] bg-slate-300"></div>
-            <span class="text-xs sm:text-lg font-extrabold text-slate-800 font-sans tracking-tight whitespace-nowrap">ITS 66<sup>th</sup></span>
+            <span class="text-xs sm:text-lg font-extrabold text-slate-800 tracking-tight whitespace-nowrap">ITS 66<sup>th</sup></span>
             <div class="h-5 sm:h-7 w-[1.5px] bg-slate-300"></div>
             <img src="assets/images/ika_its.jpeg" alt="IKA ITS" class="h-7 sm:h-10 w-auto object-contain rounded-md">
             <div class="h-5 sm:h-7 w-[1.5px] bg-slate-300"></div>
@@ -149,65 +152,38 @@
 
             <!-- Tagline Paragraph from Flyer -->
             <p class="text-lg sm:text-xl font-semibold text-[#002868] max-w-2xl leading-relaxed">
-              <strong>Institut Teknologi Sepuluh Nopember</strong> has been selected to host the yearly event organized by <strong>IBM Quantum</strong>.
+              <strong>Institut Teknologi Sepuluh Nopember</strong> has been selected to host the annual quantum computing event powered by <strong>IBM Quantum</strong>.
             </p>
 
-            <!-- Key Info Pill Cards (From Flyer Layout) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto md:mx-0 pt-2">
-              
-              <!-- Location Card -->
-              <div class="flyer-card p-4 flex items-center space-x-4 border-l-4 border-l-[#00509D]">
-                <div class="w-12 h-12 rounded-full bg-[#002868] text-[#FFB703] flex items-center justify-center text-xl flex-shrink-0">
-                  📍
-                </div>
-                <div>
-                  <div class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">Location:</div>
-                  <div class="text-base font-bold text-[#002868]"><span class="template-tag">[Isi Lokasi / Online / Hybrid]</span></div>
-                </div>
-              </div>
-
-              <!-- When Card -->
-              <div class="flyer-card p-4 flex items-center space-x-4 border-l-4 border-l-[#FFB703]">
-                <div class="w-12 h-12 rounded-full bg-[#002868] text-[#FFB703] flex items-center justify-center text-xl flex-shrink-0">
-                  📅
-                </div>
-                <div>
-                  <div class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">When?:</div>
-                  <div class="text-base font-bold text-[#002868]"><span class="template-tag">[Isi Tanggal / Bulan 2026]</span></div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Agenda List from Flyer -->
+            <!-- Agenda List from Flyer (Directly under Tagline - Location/When box removed) -->
             <div class="bg-[#E8F1FC] rounded-2xl p-5 border border-blue-200 max-w-xl mx-auto md:mx-0 text-left">
-              <div class="text-sm font-bold text-[#002868] font-mono mb-2 uppercase tracking-wide">Agenda Utama:</div>
-              <ul class="space-y-1.5 text-sm text-[#003882] font-semibold">
-                <li class="flex items-center space-x-2">
-                  <span class="text-[#FFB703] font-bold">●</span>
-                  <span>Workshop & Training Series</span>
+              <div class="text-sm font-bold text-[#002868] font-mono mb-2 uppercase tracking-wide">Main Agenda:</div>
+              <ul class="space-y-2 text-sm text-[#003882] font-semibold">
+                <li class="flex items-center space-x-2.5">
+                  <span class="text-[#FFB703] font-bold text-base">●</span>
+                  <span>Hands-on Workshop & Training Series</span>
                 </li>
-                <li class="flex items-center space-x-2">
-                  <span class="text-[#FFB703] font-bold">●</span>
-                  <span>Hands-on session with IBM Qiskit 1.x</span>
+                <li class="flex items-center space-x-2.5">
+                  <span class="text-[#FFB703] font-bold text-base">●</span>
+                  <span>Live coding sessions with IBM Qiskit 1.x SDK</span>
                 </li>
-                <li class="flex items-center space-x-2">
-                  <span class="text-[#FFB703] font-bold">●</span>
-                  <span>Challenges & National Quantum Hackathon</span>
+                <li class="flex items-center space-x-2.5">
+                  <span class="text-[#FFB703] font-bold text-base">●</span>
+                  <span>Quantum Challenges & National Hackathon</span>
                 </li>
               </ul>
             </div>
 
-            <!-- Action CTA Button (Coming Soon / Daftar) -->
+            <!-- Action CTA Button (Register / Coming Soon) -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-3">
               <a href="login.html" class="btn-flyer-primary px-8 py-4 text-base font-bold flex items-center justify-center space-x-3">
                 <div class="w-7 h-7 rounded-full bg-[#FFB703] text-[#002868] flex items-center justify-center font-extrabold text-sm">
                   →
                 </div>
-                <span>[Daftar Sekarang / Coming Soon]</span>
+                <span>[Register Now / Save Your Spot]</span>
               </a>
               <a href="event.html" class="btn-flyer-outline px-6 py-4 text-sm font-bold flex items-center justify-center space-x-2">
-                <span>Lihat Template Jadwal 📅</span>
+                <span>View Full Schedule 📅</span>
               </a>
             </div>
 
@@ -228,14 +204,14 @@
                 </div>
                 <h3 class="text-xl font-extrabold text-[#002868] mb-2">Qiskit Fall Fest 2026</h3>
                 <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                  Festival komputasi kuantum resmi IBM di Institut Teknologi Sepuluh Nopember.
+                  Official IBM Quantum festival bringing world-class quantum learning to Institut Teknologi Sepuluh Nopember.
                 </p>
 
                 <!-- Quick Info Box -->
                 <div class="bg-white rounded-xl p-3.5 border border-slate-200 font-mono text-xs text-left text-slate-700 space-y-2 shadow-sm">
-                  <div class="text-[#002868] font-bold">Location: <span class="template-tag">[Isi Lokasi]</span></div>
-                  <div class="text-[#00509D]">Date: <span class="template-tag">[Isi Tanggal]</span></div>
-                  <div class="text-amber-700">Total Prize: <span class="template-tag">[Isi Hadiah]</span></div>
+                  <div class="text-[#002868] font-bold">Location: <span class="template-tag">[Fill Location / Hybrid]</span></div>
+                  <div class="text-[#00509D]">Dates: <span class="template-tag">[Fill Dates 2026]</span></div>
+                  <div class="text-amber-700 font-bold">Total Prize Pool: <span class="template-tag">[Fill Prize Pool]</span></div>
                 </div>
 
               </div>
@@ -253,30 +229,30 @@
           
           <div class="p-4 rounded-2xl bg-[#F8FAFD] border border-slate-200">
             <div class="text-2xl sm:text-3xl font-extrabold text-[#002868] font-mono mb-1">
-              <span class="template-tag">[Isi Target Peserta]</span>
+              <span class="template-tag">[Fill Expected Count]</span>
             </div>
-            <div class="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1">Target Partisipan</div>
+            <div class="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1">Expected Participants</div>
           </div>
 
           <div class="p-4 rounded-2xl bg-[#F8FAFD] border border-slate-200">
             <div class="text-2xl sm:text-3xl font-extrabold text-[#00509D] font-mono mb-1">
-              <span class="template-tag">[Isi Jumlah Sesi]</span>
+              <span class="template-tag">[Fill Session Count]</span>
             </div>
-            <div class="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1">Workshop & Masterclass</div>
+            <div class="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1">Workshops & Masterclasses</div>
           </div>
 
           <div class="p-4 rounded-2xl bg-[#F8FAFD] border border-slate-200">
             <div class="text-2xl sm:text-3xl font-extrabold text-[#002868] font-mono mb-1">
-              <span class="template-tag">[Isi Durasi Hari]</span>
+              <span class="template-tag">[Fill Day Count]</span>
             </div>
             <div class="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1">Quantum Hackathon</div>
           </div>
 
           <div class="p-4 rounded-2xl bg-[#F8FAFD] border border-slate-200">
             <div class="text-2xl sm:text-3xl font-extrabold text-[#D97706] font-mono mb-1">
-              <span class="template-tag">[Isi Total Hadiah]</span>
+              <span class="template-tag">[Fill Total Prize]</span>
             </div>
-            <div class="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1">Total Hadiah Hackathon</div>
+            <div class="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1">Total Prize Pool</div>
           </div>
 
         </div>
@@ -289,13 +265,13 @@
         
         <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <div class="inline-flex items-center px-3.5 py-1 rounded-full bg-[#E8F1FC] text-[#002868] text-xs font-mono font-bold uppercase">
-            Rangkaian Program Utama
+            Core Program Tracks
           </div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-[#002868]">
-            Empat Pilar <span class="text-[#00509D]">Qiskit Fall Fest ITS 2026</span>
+            Four Pillars of <span class="text-[#00509D]">Qiskit Fall Fest ITS 2026</span>
           </h2>
           <p class="text-slate-600 text-sm sm:text-base">
-            Materi pembelajaran dan kompetisi terstruktur dari dasar hingga tingkat lanjut.
+            Structured hands-on tracks and competitive hackathons taking you from the fundamentals to advanced quantum algorithms.
           </p>
         </div>
 
@@ -309,11 +285,11 @@
               </div>
               <h3 class="text-lg font-bold text-[#002868] mb-2">Hands-on Workshops</h3>
               <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Praktik pembuatan sirkuit kuantum, gerbang logika, dan algoritma menggunakan Qiskit SDK 1.x.
+                Build quantum circuits, master quantum logic gates, and code algorithms with the latest IBM Qiskit SDK 1.x.
               </p>
             </div>
             <div class="pt-3 border-t border-slate-100">
-              <span class="template-tag">[Isi Silabus Workshop]</span>
+              <span class="template-tag">[Fill Workshop Syllabus]</span>
             </div>
           </div>
 
@@ -323,13 +299,13 @@
               <div class="w-12 h-12 rounded-xl bg-[#FFF8E1] text-[#B45309] flex items-center justify-center text-2xl mb-4 font-bold">
                 🎙
               </div>
-              <h3 class="text-lg font-bold text-[#002868] mb-2">Expert Masterclass</h3>
+              <h3 class="text-lg font-bold text-[#002868] mb-2">Expert Masterclasses</h3>
               <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Kuliah umum dari peneliti IBM Quantum, pakar riset komputasi ITS, dan praktisi industri.
+                Keynotes and live Q&A sessions led by IBM Quantum scientists, ITS research faculty, and industry pioneers.
               </p>
             </div>
             <div class="pt-3 border-t border-slate-100">
-              <span class="template-tag">[Isi Topik Masterclass]</span>
+              <span class="template-tag">[Fill Masterclass Topics]</span>
             </div>
           </div>
 
@@ -341,11 +317,11 @@
               </div>
               <h3 class="text-lg font-bold text-[#002868] mb-2">Quantum Hackathon</h3>
               <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Kompetisi tim menyelesaikan tantangan optimasi, QML, dan simulasi kimia kuantum.
+                Team competition tackling real-world challenges in quantum optimization, QML, and molecular simulation.
               </p>
             </div>
             <div class="pt-3 border-t border-slate-100">
-              <span class="template-tag">[Isi Hadiah & Syarat]</span>
+              <span class="template-tag">[Fill Prizes & Rules]</span>
             </div>
           </div>
 
@@ -355,13 +331,13 @@
               <div class="w-12 h-12 rounded-xl bg-[#E8F1FC] text-[#0D47A1] flex items-center justify-center text-2xl mb-4 font-bold">
                 🤝
               </div>
-              <h3 class="text-lg font-bold text-[#002868] mb-2">Community & Career</h3>
+              <h3 class="text-lg font-bold text-[#002868] mb-2">Community & Careers</h3>
               <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                Membangun jejaring kolaborasi dengan komunitas riset kuantum nasional & global.
+                Connect with mentors, peer researchers, and leading institutions across the national and global quantum ecosystem.
               </p>
             </div>
             <div class="pt-3 border-t border-slate-100">
-              <span class="template-tag">[Isi Info Komunitas]</span>
+              <span class="template-tag">[Fill Community Info]</span>
             </div>
           </div>
 
@@ -378,27 +354,27 @@
             
             <div class="lg:col-span-8 space-y-3">
               <div class="inline-flex items-center px-3 py-1 rounded-full bg-[#FFB703] text-[#002868] text-xs font-bold font-mono">
-                🚀 PRE-EVENT WORKSHOP TEMPLATE
+                🚀 PRE-EVENT WORKSHOP HIGHLIGHT
               </div>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">
-                <span class="template-tag">[Isi Judul Sesi Pre-Event]</span>
+                <span class="template-tag">[Fill Pre-Event Session Title]</span>
               </h3>
               <p class="text-slate-600 text-sm leading-relaxed">
-                <span class="template-tag">[Isi Deskripsi Pengantar Sesi Pre-Event dan Silabus Utama]</span>
+                <span class="template-tag">[Fill Brief Overview of the Pre-Event Session and Prerequisites]</span>
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono pt-2">
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200">📍 Lokasi: <span class="template-tag">[Isi Lokasi / Zoom]</span></span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200">📅 Tanggal: <span class="template-tag">[Isi Tanggal]</span></span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200">⏰ Waktu: <span class="template-tag">[Isi Waktu WIB]</span></span>
+                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200">📍 Location: <span class="template-tag">[Fill Location / Zoom]</span></span>
+                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200">📅 Date: <span class="template-tag">[Fill Date]</span></span>
+                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200">⏰ Time: <span class="template-tag">[Fill Time WIB]</span></span>
               </div>
             </div>
 
             <div class="lg:col-span-4 flex flex-col gap-3 justify-center">
               <a href="login.html" class="btn-flyer-yellow text-center px-6 py-3.5 rounded-full font-extrabold text-sm shadow-md">
-                [Isi Tombol Pendaftaran Pre-Event]
+                [Register for Pre-Event]
               </a>
               <a href="event.html" class="btn-flyer-outline text-center px-6 py-3.5 rounded-full font-bold text-sm">
-                Lihat Jadwal Lengkap ↗
+                View Full Schedule ↗
               </a>
             </div>
 
@@ -412,8 +388,8 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-2xl mx-auto mb-8">
-          <h3 class="text-xs font-mono uppercase tracking-widest text-[#00509D] font-bold mb-1">Didukung & Dikolaborasikan Oleh</h3>
-          <p class="text-lg font-bold text-[#002868]">Penyelenggara & Institusi Mitra</p>
+          <h3 class="text-xs font-mono uppercase tracking-widest text-[#00509D] font-bold mb-1">Proudly Organized & Supported By</h3>
+          <p class="text-lg font-bold text-[#002868]">Host Institutions & Community Partners</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
@@ -430,22 +406,22 @@
 
           <!-- Placeholder 1 -->
           <div class="p-3 rounded-xl border border-dashed border-slate-300 bg-[#F8FAFD] flex items-center justify-center h-16 text-center">
-            <span class="text-xs font-mono text-slate-400 font-bold">[Isi Logo]</span>
+            <span class="text-xs font-mono text-slate-400 font-bold">[Partner Logo]</span>
           </div>
 
           <!-- Placeholder 2 -->
           <div class="p-3 rounded-xl border border-dashed border-slate-300 bg-[#F8FAFD] flex items-center justify-center h-16 text-center">
-            <span class="text-xs font-mono text-slate-400 font-bold">[Isi Logo]</span>
+            <span class="text-xs font-mono text-slate-400 font-bold">[Partner Logo]</span>
           </div>
 
           <!-- Placeholder 3 -->
           <div class="p-3 rounded-xl border border-dashed border-slate-300 bg-[#F8FAFD] flex items-center justify-center h-16 text-center">
-            <span class="text-xs font-mono text-slate-400 font-bold">[Isi Logo]</span>
+            <span class="text-xs font-mono text-slate-400 font-bold">[Partner Logo]</span>
           </div>
 
           <!-- Placeholder 4 -->
           <div class="p-3 rounded-xl border border-dashed border-slate-300 bg-[#F8FAFD] flex items-center justify-center h-16 text-center">
-            <span class="text-xs font-mono text-slate-400 font-bold">[Isi Logo]</span>
+            <span class="text-xs font-mono text-slate-400 font-bold">[Partner Logo]</span>
           </div>
 
         </div>
@@ -469,29 +445,30 @@
           </div>
           <h4 class="text-white font-bold text-base">Qiskit Fall Fest ITS 2026</h4>
           <p class="text-blue-200 text-xs leading-relaxed max-w-md">
-            Festival komputasi kuantum resmi diselenggarakan oleh Institut Teknologi Sepuluh Nopember (ITS) bekerjasama dengan IBM Quantum.
+            Official IBM Quantum festival hosted by Institut Teknologi Sepuluh Nopember (ITS) in collaboration with IBM Quantum.
           </p>
           <div class="text-xs text-blue-200 font-mono">
-            Kampus ITS Sukolilo, Surabaya, Jawa Timur 60111, Indonesia
+            ITS Sukolilo Campus, Surabaya, East Java 60111, Indonesia
           </div>
         </div>
 
         <!-- Col 2 -->
         <div class="space-y-2">
-          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Navigasi</h5>
+          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Quick Links</h5>
           <ul class="space-y-1.5 text-xs text-blue-100">
             <li><a href="index.html" class="hover:text-[#FFB703] transition-colors">Home</a></li>
-            <li><a href="event.html" class="hover:text-[#FFB703] transition-colors">Event & Jadwal</a></li>
-            <li><a href="about.html" class="hover:text-[#FFB703] transition-colors">Tentang & Venue ITS</a></li>
-            <li><a href="login.html" class="hover:text-[#FFB703] transition-colors">Portal Peserta</a></li>
+            <li><a href="event.html" class="hover:text-[#FFB703] transition-colors">Events & Schedule</a></li>
+            <li><a href="about.html" class="hover:text-[#FFB703] transition-colors">About & Campus Venue</a></li>
+            <li><a href="playground.html" class="hover:text-[#FFB703] transition-colors">Playground ⚛</a></li>
+            <li><a href="login.html" class="hover:text-[#FFB703] transition-colors">Participant Portal</a></li>
           </ul>
         </div>
 
         <!-- Col 3 -->
         <div class="space-y-2">
-          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Kontak Panitia</h5>
+          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Get in Touch</h5>
           <ul class="space-y-1.5 text-xs text-blue-100 font-mono">
-            <li>📧 <span class="template-tag">[Isi Email Panitia]</span></li>
+            <li>📧 <span class="template-tag">[Fill Committee Email]</span></li>
             <li>🌐 <a href="https://www.its.ac.id" target="_blank" rel="noopener" class="hover:text-[#FFB703]">its.ac.id</a></li>
             <li>📱 <span class="text-[#FFB703]">@ITS_campus</span></li>
           </ul>
@@ -516,7 +493,7 @@
   </footer>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" class="fixed bottom-6 right-6 p-3 rounded-full btn-flyer-yellow shadow-xl opacity-0 pointer-events-none transition-all duration-200 z-50" aria-label="Kembali ke atas">
+  <button id="back-to-top" class="fixed bottom-6 right-6 p-3 rounded-full btn-flyer-yellow shadow-xl opacity-0 pointer-events-none transition-all duration-200 z-50" aria-label="Back to top">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>

@@ -1,5 +1,5 @@
 /**
- * Qiskit Fall Fest ITS 2026 - Participant Portal & Authentication
+ * Qiskit Fall Fest ITS 2026 - Participant Portal & Authentication (Custom Database Ready)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     alertBox.textContent = message;
     alertBox.className = `p-4 mb-4 rounded-xl text-sm font-medium transition-all duration-300 ${
       isSuccess 
-        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-lg shadow-emerald-500/10' 
-        : 'bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-lg shadow-rose-500/10'
+        ? 'bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-sm' 
+        : 'bg-rose-50 text-rose-800 border border-rose-200 shadow-sm'
     }`;
     alertBox.classList.remove('hidden');
     setTimeout(() => {
@@ -26,42 +26,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Tab Switcher
   if (tabLogin && tabRegister && formLogin && formRegister) {
     tabLogin.addEventListener('click', () => {
-      tabLogin.classList.add('bg-cyan-500', 'text-black', 'shadow-lg', 'shadow-cyan-500/30');
-      tabLogin.classList.remove('text-slate-400', 'hover:text-white');
+      tabLogin.classList.add('bg-[#002868]', 'text-white', 'shadow-sm');
+      tabLogin.classList.remove('bg-transparent', 'text-slate-600', 'hover:text-[#002868]');
 
-      tabRegister.classList.remove('bg-cyan-500', 'text-black', 'shadow-lg', 'shadow-cyan-500/30');
-      tabRegister.classList.add('text-slate-400', 'hover:text-white');
+      tabRegister.classList.remove('bg-[#002868]', 'text-white', 'shadow-sm');
+      tabRegister.classList.add('bg-transparent', 'text-slate-600', 'hover:text-[#002868]');
 
       formLogin.classList.remove('hidden');
       formRegister.classList.add('hidden');
     });
 
     tabRegister.addEventListener('click', () => {
-      tabRegister.classList.add('bg-cyan-500', 'text-black', 'shadow-lg', 'shadow-cyan-500/30');
-      tabRegister.classList.remove('text-slate-400', 'hover:text-white');
+      tabRegister.classList.add('bg-[#002868]', 'text-white', 'shadow-sm');
+      tabRegister.classList.remove('bg-transparent', 'text-slate-600', 'hover:text-[#002868]');
 
-      tabLogin.classList.remove('bg-cyan-500', 'text-black', 'shadow-lg', 'shadow-cyan-500/30');
-      tabLogin.classList.add('text-slate-400', 'hover:text-white');
+      tabLogin.classList.remove('bg-[#002868]', 'text-white', 'shadow-sm');
+      tabLogin.classList.add('bg-transparent', 'text-slate-600', 'hover:text-[#002868]');
 
       formRegister.classList.remove('hidden');
       formLogin.classList.add('hidden');
     });
   }
 
-  // 2. Mock Form Submission Handlers
+  // 2. Form Submission Handlers
   if (formLogin) {
     formLogin.addEventListener('submit', (e) => {
       e.preventDefault();
-      const email = document.getElementById('login-email').value;
+      const email = document.getElementById('login-email')?.value || 'Participant';
       const submitBtn = formLogin.querySelector('button[type="submit"]');
       
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">🔄</span> Memverifikasi Kredensial...';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">🔄</span> Verifying Credentials...';
+      }
 
       setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Masuk ke Portal 🚀';
-        showAlert(`Selamat datang kembali! Sesi komputasi kuantum aktif untuk ${email}.`, true);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Sign In to Portal 🚀';
+        }
+        showAlert(`Welcome back! Quantum computing session active for ${email}.`, true);
       }, 1200);
     });
   }
@@ -69,27 +73,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (formRegister) {
     formRegister.addEventListener('submit', (e) => {
       e.preventDefault();
-      const fullname = document.getElementById('reg-fullname').value;
+      const fullname = document.getElementById('reg-fullname')?.value || 'Participant';
       const submitBtn = formRegister.querySelector('button[type="submit"]');
       
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">🔄</span> Mendaftarkan Qubit ID...';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">🔄</span> Registering Participant Profile...';
+      }
 
       setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Daftar Sekarang ★';
-        showAlert(`Pendaftaran berhasil! Selamat bergabung di Qiskit Fall Fest ITS 2026, ${fullname}. Silakan cek email aktivasi Anda.`, true);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Create Account ★';
+        }
+        showAlert(`Registration successful! Welcome to Qiskit Fall Fest ITS 2026, ${fullname}. Please check your email for confirmation.`, true);
         formRegister.reset();
       }, 1500);
     });
   }
 
-  // 3. Social SSO Mock
+  // 3. Social SSO Handlers
   const ssoButtons = document.querySelectorAll('.sso-btn');
   ssoButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const provider = btn.getAttribute('data-provider');
-      showAlert(`Menghubungkan ke otentikasi ${provider}... (Portal simulasi Qiskit Fall Fest 2026)`, true);
+      const provider = btn.getAttribute('data-provider') || 'Single Sign-On';
+      showAlert(`Connecting to ${provider} authentication... (Custom database sandbox)`, true);
     });
   });
 });
+

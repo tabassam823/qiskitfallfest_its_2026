@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" data-font="outfit">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About & Venue - Qiskit Fall Fest ITS 2026</title>
-  <meta name="description" content="Informasi tentang Qiskit Fall Fest 2026, ekosistem riset komputasi kuantum Institut Teknologi Sepuluh Nopember (ITS), denah venue, dan FAQ.">
+  <meta name="description" content="Learn about Qiskit Fall Fest 2026, the quantum research ecosystem at Institut Teknologi Sepuluh Nopember (ITS), campus venue details, and FAQs.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/qiskitfallfest2026_transparent_square.png">
@@ -30,8 +30,9 @@
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['var(--font-main)', '"Outfit"', '"DM Sans"', 'system-ui', 'sans-serif'],
+            mono: ['var(--font-code)', '"JetBrains Mono"', 'monospace'],
+            heading: ['var(--font-heading)', '"Outfit"', 'sans-serif'],
           }
         }
       }
@@ -42,7 +43,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
-<body class="bg-[#F8FAFD] text-slate-900 min-h-screen flex flex-col selection:bg-amber-300 selection:text-blue-950 quantum-subtle-bg">
+<body class="bg-[#F8FAFD] text-slate-900 min-h-screen flex flex-col selection:bg-amber-300 selection:text-blue-950 quantum-subtle-bg font-sans">
 
   <!-- Header / Navigation -->
   <header class="sticky top-0 z-50 flyer-nav">
@@ -66,10 +67,11 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="nav-link py-2 text-sm">Home</a>
-          <a href="event.html" class="nav-link py-2 text-sm">Event & Jadwal</a>
+          <a href="event.html" class="nav-link py-2 text-sm">Events & Schedule</a>
           <a href="about.html" class="nav-link py-2 text-sm active">About & Venue</a>
+          <a href="playground.html" class="nav-link py-2 text-sm">Playground ⚛</a>
           <a href="login.html" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2">
-            <span>Portal Peserta</span>
+            <span>Participant Portal</span>
             <svg class="w-4 h-4 text-[#FFB703]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
@@ -89,9 +91,10 @@
       <!-- Mobile Dropdown Menu -->
       <div id="mobile-menu" class="hidden md:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
         <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Home</a>
-        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Event & Jadwal</a>
+        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Events & Schedule</a>
         <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium active">About & Venue</a>
-        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Portal Peserta / Login</a>
+        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground ⚛</a>
+        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Participant Portal / Register</a>
       </div>
     </nav>
   </header>
@@ -103,13 +106,13 @@
     <section class="py-14 border-b border-slate-200 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
         <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#E8F1FC] text-[#002868] text-xs font-mono font-bold">
-          <span>🏛 TENTANG PENYELENGGARA & VENUE ITS</span>
+          <span>🏛 ABOUT THE ORGANIZERS & ITS VENUE</span>
         </div>
         <h1 class="text-3xl sm:text-5xl font-extrabold text-[#002868] tracking-tight">
-          Mengenal <span class="text-[#00509D]">Qiskit Fall Fest</span> & Kampus ITS
+          Discover <span class="text-[#00509D]">Qiskit Fall Fest</span> & Kampus ITS
         </h1>
         <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
-          Inisiatif kolaborasi global antara IBM Quantum dan Institut Teknologi Sepuluh Nopember (ITS).
+          A premier collaborative initiative powered by IBM Quantum and Institut Teknologi Sepuluh Nopember (ITS).
         </p>
       </div>
     </section>
@@ -124,17 +127,17 @@
               Global Quantum Initiative
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-[#002868] leading-tight">
-              Apa itu Qiskit Fall Fest 2026?
+              What is Qiskit Fall Fest 2026?
             </h2>
             <div class="space-y-3 text-slate-700 text-sm sm:text-base leading-relaxed">
               <p>
-                <strong>Qiskit Fall Fest</strong> adalah rangkaian acara komputasi kuantum mahasiswa terbesar di dunia yang diselenggarakan oleh universitas terpilih di seluruh dunia bekerja sama dengan <strong>IBM Quantum</strong>.
+                <strong>Qiskit Fall Fest</strong> is the largest student-driven quantum computing event series in the world, organized across leading universities globally in partnership with <strong>IBM Quantum</strong>.
               </p>
               <p>
-                Di tahun 2026, <strong>Institut Teknologi Sepuluh Nopember (ITS)</strong> terpilih sebagai tuan rumah utama di Indonesia untuk membawa pembelajaran interaktif dan ekosistem riset kuantum langsung ke tangan mahasiswa dan peneliti.
+                In 2026, <strong>Institut Teknologi Sepuluh Nopember (ITS)</strong> was proudly selected as a primary host in Indonesia to bring interactive quantum learning, real-device cloud access, and a supportive research community directly to students and faculty.
               </p>
               <div class="p-4 bg-[#FFFBEB] rounded-xl border border-amber-200 text-xs font-mono text-amber-900">
-                📌 Catatan Pengisi Template: <span class="template-tag">[Isi Deskripsi Tambahan Visi & Misi Qiskit Fall Fest ITS]</span>
+                📌 Organizer Note: <span class="template-tag">[Fill in Additional Vision & Mission Details for Qiskit Fall Fest ITS]</span>
               </div>
             </div>
           </div>
@@ -144,25 +147,25 @@
             <div class="flyer-card p-5 border-l-4 border-l-[#002868]">
               <div class="text-2xl mb-2">🌐</div>
               <h3 class="text-base font-bold text-[#002868] mb-1">IBM Quantum Cloud</h3>
-              <p class="text-xs text-slate-600">Akses langsung ke prosesor kuantum nyata IBM via cloud.</p>
+              <p class="text-xs text-slate-600">Direct cloud access to run quantum circuits on real IBM Quantum hardware.</p>
             </div>
 
             <div class="flyer-card p-5 border-l-4 border-l-[#00509D]">
               <div class="text-2xl mb-2">📜</div>
-              <h3 class="text-base font-bold text-[#002868] mb-1">Sertifikat Resmi IBM</h3>
-              <p class="text-xs text-slate-600">Kredensial e-badge yang dapat dibagikan di LinkedIn.</p>
+              <h3 class="text-base font-bold text-[#002868] mb-1">Official IBM Credentials</h3>
+              <p class="text-xs text-slate-600">Verifiable digital e-badges and certificates shareable on LinkedIn.</p>
             </div>
 
             <div class="flyer-card p-5 border-l-4 border-l-[#FFB703]">
               <div class="text-2xl mb-2">🎓</div>
-              <h3 class="text-base font-bold text-[#002868] mb-1">Mentor ITS & IBM</h3>
-              <p class="text-xs text-slate-600">Bimbingan intensif dari dosen dan praktisi industri.</p>
+              <h3 class="text-base font-bold text-[#002868] mb-1">ITS & IBM Mentors</h3>
+              <p class="text-xs text-slate-600">Hands-on mentorship from university professors and IBM Quantum researchers.</p>
             </div>
 
             <div class="flyer-card p-5 border-l-4 border-l-[#0D47A1]">
               <div class="text-2xl mb-2">🚀</div>
-              <h3 class="text-base font-bold text-[#002868] mb-1">Tantangan Nyata</h3>
-              <p class="text-xs text-slate-600">Hackathon dengan studi kasus aplikatif di Indonesia.</p>
+              <h3 class="text-base font-bold text-[#002868] mb-1">Applied Hackathons</h3>
+              <p class="text-xs text-slate-600">Solve real-world challenges inspired by national industry and scientific cases.</p>
             </div>
           </div>
         </div>
@@ -179,13 +182,13 @@
             </div>
             <div class="lg:col-span-8 space-y-3">
               <div class="inline-flex items-center px-3 py-1 rounded-full bg-[#E8F1FC] text-[#002868] text-xs font-mono font-bold">
-                Pusat Keunggulan Riset Kuantum ITS
+                ITS Quantum Research Hub
               </div>
               <h3 class="text-2xl font-extrabold text-[#002868]">
-                Membangun Generasi Emas Komputasi Kuantum di Kampus ITS Surabaya
+                Empowering the Next Generation of Quantum Innovators at ITS Surabaya
               </h3>
               <p class="text-slate-600 text-sm leading-relaxed">
-                <span class="template-tag">[Isi Profil Lab / Departemen Penyelenggara di ITS, misalnya: Departemen Fisika FSAD ITS, Teknik Informatika FTEIC ITS, dan Laboratorium Fisika Komputasi]</span>
+                <span class="template-tag">[Fill Host Labs / Departments at ITS, e.g., Department of Physics FSAD ITS, Department of Informatics FTEIC ITS, and the Computational Physics Laboratory]</span>
               </p>
             </div>
           </div>
@@ -200,11 +203,11 @@
         
         <div class="text-center max-w-2xl mx-auto mb-12">
           <div class="inline-flex items-center px-3.5 py-1 rounded-full bg-[#FFB703] text-[#002868] text-xs font-mono font-bold uppercase mb-2">
-            📍 Lokasi & Fasilitas
+            📍 Location & Logistics
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">Venue Pelaksanaan Acara</h2>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">Event Venue & Campus Facilities</h2>
           <p class="text-slate-600 text-xs sm:text-sm mt-1">
-            Format: <span class="template-tag">[Isi Format: Hybrid / Onsite & Zoom]</span>
+            Format: <span class="template-tag">[Fill Event Format: Hybrid / Onsite & Zoom]</span>
           </p>
         </div>
 
@@ -213,19 +216,19 @@
           <div class="lg:col-span-6 space-y-4">
             
             <div class="flyer-card p-5 border-l-4 border-l-[#002868]">
-              <div class="text-xs font-bold text-slate-500 uppercase font-mono">Gedung / Ruangan:</div>
-              <h4 class="text-lg font-bold text-[#002868] mt-1"><span class="template-tag">[Isi Nama Gedung / Auditorium / Lantai]</span></h4>
-              <p class="text-xs text-slate-600 mt-1">Kampus ITS Sukolilo, Surabaya, Jawa Timur 60111</p>
+              <div class="text-xs font-bold text-slate-500 uppercase font-mono">Building / Hall:</div>
+              <h4 class="text-lg font-bold text-[#002868] mt-1"><span class="template-tag">[Fill Building Name / Auditorium / Floor]</span></h4>
+              <p class="text-xs text-slate-600 mt-1">ITS Sukolilo Campus, Surabaya, East Java 60111, Indonesia</p>
             </div>
 
             <div class="flyer-card p-5 border-l-4 border-l-[#00509D]">
-              <div class="text-xs font-bold text-slate-500 uppercase font-mono">Fasilitas Onsite:</div>
-              <p class="text-sm text-slate-700 mt-1"><span class="template-tag">[Isi Daftar Fasilitas: WiFi Gigabit, Lab Komputer, Snack & Merchandise]</span></p>
+              <div class="text-xs font-bold text-slate-500 uppercase font-mono">Onsite Facilities:</div>
+              <p class="text-sm text-slate-700 mt-1"><span class="template-tag">[Fill Amenities: Gigabit High-Speed Wi-Fi, Computer Labs, Snacks, Swag & Merchandise]</span></p>
             </div>
 
             <div class="flyer-card p-5 border-l-4 border-l-[#FFB703]">
-              <div class="text-xs font-bold text-slate-500 uppercase font-mono">Panduan Transportasi:</div>
-              <p class="text-sm text-slate-700 mt-1"><span class="template-tag">[Isi Panduan Akses: Dari Bandara Juanda, Stasiun Gubeng / Pasar Turi via Suroboyo Bus / Taksi Online]</span></p>
+              <div class="text-xs font-bold text-slate-500 uppercase font-mono">Getting Here / Transit Guide:</div>
+              <p class="text-sm text-slate-700 mt-1"><span class="template-tag">[Fill Transit Guide: Accessible from Juanda Int'l Airport, Gubeng / Pasar Turi Train Station via Suroboyo Bus & Ride-Hailing]</span></p>
             </div>
 
           </div>
@@ -235,7 +238,7 @@
             <div class="flyer-card p-3 overflow-hidden shadow-md">
               <div class="w-full h-80 rounded-xl overflow-hidden">
                 <iframe 
-                  title="Peta Kampus ITS Sukolilo"
+                  title="ITS Sukolilo Campus Map"
                   class="w-full h-full border-0"
                   src="https://maps.google.com/maps?q=Institut%20Teknologi%20Sepuluh%20Nopember%20Surabaya&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                   loading="lazy">
@@ -243,7 +246,7 @@
               </div>
               <div class="p-3 text-center">
                 <a href="https://maps.google.com/?q=Institut+Teknologi+Sepuluh+Nopember+Surabaya" target="_blank" rel="noopener" class="btn-flyer-outline px-5 py-2 text-xs font-bold">
-                  Buka Peta di Google Maps ↗
+                  Open in Google Maps ↗
                 </a>
               </div>
             </div>
@@ -259,49 +262,49 @@
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         <div class="text-center mb-8">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">Pertanyaan Umum (FAQ)</h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-1">Informasi penting seputar kepesertaan.</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">Frequently Asked Questions (FAQ)</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1">Everything you need to know about participating in the fest.</p>
         </div>
 
         <div class="space-y-3">
           
           <details class="flyer-card p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer group">
             <summary class="flex justify-between items-center font-bold text-[#002868] text-sm sm:text-base">
-              <span>Siapa saja yang dapat mendaftar?</span>
+              <span>Who can register and join?</span>
               <span class="text-[#00509D] font-mono group-open:rotate-180 transition-transform">▼</span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
-              <span class="template-tag">[Isi Kriteria Peserta: Terbuka untuk seluruh mahasiswa ITS, mahasiswa universitas lain di Indonesia, dan umum]</span>
+              <span class="template-tag">[Fill Eligibility: Open to all ITS students, university students across Indonesia, researchers, and quantum enthusiasts]</span>
             </p>
           </details>
 
           <details class="flyer-card p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer group">
             <summary class="flex justify-between items-center font-bold text-[#002868] text-sm sm:text-base">
-              <span>Apakah kegiatan ini dipungut biaya?</span>
+              <span>Is there any registration fee?</span>
               <span class="text-[#00509D] font-mono group-open:rotate-180 transition-transform">▼</span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
-              <span class="template-tag">[Isi Info Biaya: 100% Gratis / Didukung penuh oleh ITS & IBM Quantum]</span>
+              <span class="template-tag">[Fill Fee Info: 100% Free / Fully sponsored by ITS and IBM Quantum]</span>
             </p>
           </details>
 
           <details class="flyer-card p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer group">
             <summary class="flex justify-between items-center font-bold text-[#002868] text-sm sm:text-base">
-              <span>Bagaimana teknis pembentukan tim Hackathon?</span>
+              <span>How do Hackathon teams work?</span>
               <span class="text-[#00509D] font-mono group-open:rotate-180 transition-transform">▼</span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
-              <span class="template-tag">[Isi Ketentuan Tim Hackathon: 1-4 orang per tim, boleh lintas jurusan/universitas]</span>
+              <span class="template-tag">[Fill Team Guidelines: 1–4 members per team; cross-major and inter-university collaborations are warmly welcome]</span>
             </p>
           </details>
 
           <details class="flyer-card p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer group">
             <summary class="flex justify-between items-center font-bold text-[#002868] text-sm sm:text-base">
-              <span>Apakah peserta mendapatkan sertifikat?</span>
+              <span>Will participants receive a certificate?</span>
               <span class="text-[#00509D] font-mono group-open:rotate-180 transition-transform">▼</span>
             </summary>
             <p class="mt-3 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3 leading-relaxed">
-              <span class="template-tag">[Isi Info Sertifikat & E-Badge IBM Quantum]</span>
+              <span class="template-tag">[Fill Certificate & IBM Quantum E-Badge Information]</span>
             </p>
           </details>
 
@@ -323,22 +326,23 @@
           </div>
           <h4 class="text-white font-bold text-base">Qiskit Fall Fest ITS 2026</h4>
           <p class="text-blue-200 text-xs leading-relaxed max-w-md">
-            Festival komputasi kuantum resmi diselenggarakan oleh Institut Teknologi Sepuluh Nopember (ITS) bekerjasama dengan IBM Quantum.
+            Official quantum computing festival organized by Institut Teknologi Sepuluh Nopember (ITS) in collaboration with IBM Quantum.
           </p>
         </div>
         <div class="space-y-2">
-          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Navigasi</h5>
+          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Quick Links</h5>
           <ul class="space-y-1.5 text-xs text-blue-100">
             <li><a href="index.html" class="hover:text-[#FFB703]">Home</a></li>
-            <li><a href="event.html" class="hover:text-[#FFB703]">Event & Jadwal</a></li>
-            <li><a href="about.html" class="hover:text-[#FFB703]">Tentang & Venue ITS</a></li>
-            <li><a href="login.html" class="hover:text-[#FFB703]">Portal Peserta</a></li>
+            <li><a href="event.html" class="hover:text-[#FFB703]">Events & Schedule</a></li>
+            <li><a href="about.html" class="hover:text-[#FFB703]">About & Campus Venue</a></li>
+            <li><a href="playground.html" class="hover:text-[#FFB703]">Playground ⚛</a></li>
+            <li><a href="login.html" class="hover:text-[#FFB703]">Participant Portal</a></li>
           </ul>
         </div>
         <div class="space-y-2">
-          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Kontak Panitia</h5>
+          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Get in Touch</h5>
           <ul class="space-y-1.5 text-xs text-blue-100 font-mono">
-            <li>📧 <span class="template-tag">[Isi Email Panitia]</span></li>
+            <li>📧 <span class="template-tag">[Fill Committee Email]</span></li>
             <li>🌐 <a href="https://www.its.ac.id" target="_blank" rel="noopener" class="hover:text-[#FFB703]">its.ac.id</a></li>
             <li>📱 <span class="text-[#FFB703]">@ITS_campus</span></li>
           </ul>
@@ -346,7 +350,7 @@
       </div>
       <div class="border-t border-blue-900 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-blue-200">
         <p>© 2026 Qiskit Fall Fest ITS • Institut Teknologi Sepuluh Nopember & IBM Quantum.</p>
-        <p>Qiskit® adalah merek dagang terdaftar dari IBM Corporation.</p>
+        <p>Qiskit® is a registered trademark of IBM Corporation.</p>
       </div>
     </div>
   </footer>

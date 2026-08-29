@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="en" data-font="outfit" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quantum Circuit Playground & Game - Qiskit Fall Fest ITS 2026</title>
-  <meta name="description" content="Eksperimen dan mainkan simulasi gerbang sirkuit kuantum interaktif. Taklukkan tantangan qubit spin naik/turun dan buat jalinan kuantum di Qiskit Fall Fest ITS 2026.">
+  <meta name="description" content="Experiment and play with an interactive quantum circuit gate simulator. Master qubit spin flips, superposition, and entanglement at Qiskit Fall Fest ITS 2026.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/qiskitfallfest2026_transparent_square.png">
@@ -36,8 +36,9 @@
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['var(--font-main)', '"Outfit"', '"DM Sans"', 'system-ui', 'sans-serif'],
+            mono: ['var(--font-code)', '"JetBrains Mono"', 'monospace'],
+            heading: ['var(--font-heading)', '"Outfit"', 'sans-serif'],
           }
         }
       }
@@ -48,7 +49,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
 </head>
-<body class="bg-[#070B19] text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
+<body class="bg-[#070B19] text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black font-sans">
 
   <!-- Ambient Light Blobs -->
   <div class="fixed top-20 right-10 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none ambient-blob-1 z-0"></div>
@@ -76,11 +77,11 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="nav-link py-2 text-sm font-medium">Home</a>
-          <a href="event.html" class="nav-link py-2 text-sm font-medium">Event & Jadwal</a>
+          <a href="event.html" class="nav-link py-2 text-sm font-medium">Events & Schedule</a>
           <a href="about.html" class="nav-link py-2 text-sm font-medium">About & Venue</a>
           <a href="playground.html" class="nav-link py-2 text-sm font-medium active">Playground ⚛</a>
           <a href="login.html" class="btn-quantum-primary px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center space-x-2">
-            <span>Portal Peserta</span>
+            <span>Participant Portal</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
@@ -100,10 +101,10 @@
       <!-- Mobile Dropdown Menu -->
       <div id="mobile-menu" class="hidden md:hidden pb-5 pt-2 border-t border-slate-800/80 space-y-2">
         <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50">Home</a>
-        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50">Event & Jadwal</a>
+        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50">Events & Schedule</a>
         <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50">About & Venue</a>
         <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800/50 active">Playground ⚛</a>
-        <a href="login.html" class="btn-quantum-primary block text-center px-4 py-2.5 rounded-xl text-base font-semibold mt-3">Portal Peserta / Login</a>
+        <a href="login.html" class="btn-quantum-primary block text-center px-4 py-2.5 rounded-xl text-base font-semibold mt-3">Participant Portal / Register</a>
       </div>
     </nav>
   </header>
@@ -121,7 +122,7 @@
           Quantum Circuit <span class="shimmer-text">Playground & Game</span>
         </h1>
         <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Eksperimen menambahkan gerbang kuantum pada sirkuit 3-Qubit. Capai target keadaan spin qubit (Naik $\uparrow$ vs Turun $\downarrow$, Superposisi, atau Jalinan Kuantum) untuk menaklukkan tantangan!
+          Tinker with quantum logic gates on an interactive 3-qubit circuit. Hit target spin states (Spin Up $\uparrow$ vs Down $\downarrow$, Superposition, or Entanglement) to beat every challenge!
         </p>
 
         <!-- Level Selector Tabs -->
@@ -130,7 +131,7 @@
             Level 1: Qubit Flip (X)
           </button>
           <button type="button" class="level-select-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border" data-level="2">
-            Level 2: Superposisi (H)
+            Level 2: Superposition (H)
           </button>
           <button type="button" class="level-select-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border" data-level="3">
             Level 3: Phase Flip (Z)
@@ -142,7 +143,7 @@
             Level 5: Cascade Flip
           </button>
           <button type="button" class="level-select-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border" data-level="0">
-            ★ Mode Bebas (Sandbox)
+            ★ Sandbox Mode
           </button>
         </div>
       </div>
@@ -152,21 +153,21 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-2">
             <div class="flex items-center space-x-3">
-              <span id="challenge-title" class="text-xl sm:text-2xl font-bold text-white">Tantangan 1</span>
+              <span id="challenge-title" class="text-xl sm:text-2xl font-bold text-white">Challenge 1</span>
               <span id="challenge-status-badge" class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
-                ⏳ Target Belum Tercapai
+                ⏳ Target Not Yet Reached
               </span>
             </div>
             <p id="challenge-objective" class="text-sm sm:text-base text-slate-300 font-medium">
-              Objektif tantangan...
+              Challenge objective...
             </p>
             <p id="challenge-hint" class="text-xs font-mono text-cyan-300">
-              💡 Petunjuk...
+              💡 Hint...
             </p>
           </div>
           <div class="flex-shrink-0">
             <button id="clear-circuit-btn" type="button" class="btn-quantum-outline px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2">
-              <span>↺ Reset Sirkuit</span>
+              <span>↺ Reset Circuit</span>
             </button>
           </div>
         </div>
@@ -181,8 +182,8 @@
           <!-- Gate Palette Toolbar -->
           <div class="glass-panel rounded-2xl p-5 border border-slate-700">
             <div class="text-xs font-mono font-bold uppercase text-slate-400 mb-3 flex items-center justify-between">
-              <span>🎨 Pilih Gerbang Kuantum yang Ingin Dipasang:</span>
-              <span class="text-cyan-400 text-[11px]">Klik gerbang lalu klik slot sirkuit di bawah</span>
+              <span>🎨 Select a Quantum Gate to Place:</span>
+              <span class="text-cyan-400 text-[11px]">Click a gate, then click any open circuit slot below</span>
             </div>
             
             <div class="flex flex-wrap gap-3">
@@ -214,12 +215,12 @@
 
               <!-- Gate SWAP -->
               <button type="button" class="gate-palette-btn px-4 py-2.5 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 border border-emerald-300 text-white font-mono font-bold text-sm shadow-md transition-all" data-gate="SWAP">
-                <span class="text-base">SWAP</span> <span class="text-xs font-sans font-normal opacity-80">(Tukar)</span>
+                <span class="text-base">SWAP</span> <span class="text-xs font-sans font-normal opacity-80">(Swap)</span>
               </button>
 
               <!-- Trash Mode -->
               <button type="button" class="gate-palette-btn px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-600 text-slate-300 font-mono font-bold text-sm shadow-md transition-all hover:bg-rose-900 hover:border-rose-500" data-gate="TRASH">
-                <span>🗑 Hapus Slot</span>
+                <span>🗑 Clear Slot</span>
               </button>
 
             </div>
@@ -255,10 +256,10 @@
             <div class="flex justify-between items-center mb-3">
               <div class="flex items-center space-x-2">
                 <span class="text-emerald-400 font-mono">🐍</span>
-                <span class="text-xs font-mono font-bold text-slate-300">Ekspor Kode Qiskit 1.x Python:</span>
+                <span class="text-xs font-mono font-bold text-slate-300">Live Qiskit 1.x Python Export:</span>
               </div>
               <button id="copy-qiskit-btn" type="button" class="btn-quantum-outline px-3 py-1 rounded-lg text-xs font-mono">
-                Salin Kode 📋
+                Copy Code 📋
               </button>
             </div>
             <pre class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-cyan-300 overflow-x-auto leading-relaxed border border-slate-800"><code id="qiskit-python-code">from qiskit import QuantumCircuit
@@ -274,14 +275,14 @@ qc.measure_all()</code></pre>
           <!-- Spin States Cards -->
           <div class="glass-panel rounded-2xl p-6 border border-blue-500/30 space-y-4">
             <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">
-              🧭 Keadaan Spin Qubit Real-Time
+              🧭 Real-Time Qubit Spin States
             </h3>
 
             <!-- Qubit 0 -->
             <div id="qubit-spin-card-0" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
               <div>
                 <div class="text-xs font-mono text-cyan-400 font-bold">Qubit q[0]</div>
-                <div class="spin-state-text text-sm font-bold text-emerald-300 font-mono">Naik (|0⟩)</div>
+                <div class="spin-state-text text-sm font-bold text-emerald-300 font-mono">Spin Up (|0⟩)</div>
                 <div class="spin-prob-text text-[11px] text-slate-400 font-mono mt-0.5">P(|0⟩): 100% • P(|1⟩): 0%</div>
               </div>
               <div class="spin-arrow text-4xl text-emerald-400 font-bold">↑</div>
@@ -291,7 +292,7 @@ qc.measure_all()</code></pre>
             <div id="qubit-spin-card-1" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
               <div>
                 <div class="text-xs font-mono text-purple-400 font-bold">Qubit q[1]</div>
-                <div class="spin-state-text text-sm font-bold text-emerald-300 font-mono">Naik (|0⟩)</div>
+                <div class="spin-state-text text-sm font-bold text-emerald-300 font-mono">Spin Up (|0⟩)</div>
                 <div class="spin-prob-text text-[11px] text-slate-400 font-mono mt-0.5">P(|0⟩): 100% • P(|1⟩): 0%</div>
               </div>
               <div class="spin-arrow text-4xl text-emerald-400 font-bold">↑</div>
@@ -301,7 +302,7 @@ qc.measure_all()</code></pre>
             <div id="qubit-spin-card-2" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
               <div>
                 <div class="text-xs font-mono text-pink-400 font-bold">Qubit q[2]</div>
-                <div class="spin-state-text text-sm font-bold text-emerald-300 font-mono">Naik (|0⟩)</div>
+                <div class="spin-state-text text-sm font-bold text-emerald-300 font-mono">Spin Up (|0⟩)</div>
                 <div class="spin-prob-text text-[11px] text-slate-400 font-mono mt-0.5">P(|0⟩): 100% • P(|1⟩): 0%</div>
               </div>
               <div class="spin-arrow text-4xl text-emerald-400 font-bold">↑</div>
@@ -312,7 +313,7 @@ qc.measure_all()</code></pre>
           <!-- Measurement Probabilities Distribution Chart -->
           <div class="glass-panel rounded-2xl p-6 border border-slate-700 space-y-4">
             <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-purple-400 flex items-center justify-between">
-              <span>📊 Distribusi Probabilitas Basis State</span>
+              <span>📊 Computational Basis State Probabilities</span>
               <span class="text-[10px] text-slate-500">|q0 q1 q2⟩</span>
             </h3>
 
@@ -329,28 +330,28 @@ qc.measure_all()</code></pre>
       <!-- EDUCATIONAL GUIDE COLLAPSIBLE -->
       <div class="glass-panel rounded-2xl p-6 border border-slate-700 space-y-4">
         <h3 class="text-base font-bold text-white flex items-center space-x-2">
-          <span>📖 Panduan Singkat Gerbang Kuantum</span>
+          <span>📖 Quick Guide to Quantum Logic Gates</span>
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
           
           <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <div class="font-bold text-pink-400 font-mono mb-1">Gerbang Pauli-X (NOT / Flip)</div>
+            <div class="font-bold text-pink-400 font-mono mb-1">Pauli-X Gate (NOT / Bit Flip)</div>
             <p class="leading-relaxed">
-              Membalik keadaan basis kuantum: $|0\rangle \to |1\rangle$ (Naik $\to$ Turun) dan sebaliknya. Merupakan gerbang inversi kuantum.
+              Flips the computational basis state: $|0\rangle \to |1\rangle$ (Spin Up $\to$ Spin Down) and vice versa. It acts as the quantum NOT gate.
             </p>
           </div>
 
           <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <div class="font-bold text-purple-400 font-mono mb-1">Gerbang Hadamard (H)</div>
+            <div class="font-bold text-purple-400 font-mono mb-1">Hadamard Gate (H)</div>
             <p class="leading-relaxed">
-              Membawa qubit basis ke keadaan superposisi merata $|+\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}}$, sehingga memiliki peluang ukur 50%-50%.
+              Transforms a basis state into an equal superposition $|+\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}}$, yielding a 50/50 measurement probability.
             </p>
           </div>
 
           <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <div class="font-bold text-cyan-400 font-mono mb-1">Gerbang CNOT (Controlled-X)</div>
+            <div class="font-bold text-cyan-400 font-mono mb-1">CNOT Gate (Controlled-X)</div>
             <p class="leading-relaxed">
-              Gerbang 2-qubit untuk jalinan kuantum (*entanglement*). Target qubit akan dibalik jika dan hanya jika control qubit bernilai $|1\rangle$.
+              A 2-qubit gate essential for creating quantum entanglement. Flips the target qubit if and only if the control qubit is in state $|1\rangle$.
             </p>
           </div>
 
@@ -364,16 +365,16 @@ qc.measure_all()</code></pre>
   <div id="win-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
     <div class="glass-panel max-w-md w-full rounded-3xl p-8 border-2 border-emerald-400 text-center shadow-2xl relative animate-bounce">
       <div class="text-5xl mb-3">🎉</div>
-      <h3 class="text-2xl font-extrabold text-white mb-2">Luar Biasa, Target Tercapai!</h3>
+      <h3 class="text-2xl font-extrabold text-white mb-2">Awesome job! Target reached!</h3>
       <p class="text-sm text-slate-300 leading-relaxed mb-6">
-        Anda berhasil merakit sirkuit kuantum yang tepat dan memenuhi kondisi tantangan kuantum ini!
+        You successfully wired the circuit and satisfied all conditions for this quantum challenge!
       </p>
       <div class="flex justify-center gap-3">
         <button id="next-level-btn" type="button" class="btn-quantum-primary px-6 py-3 rounded-xl font-bold text-sm">
-          Lanjut ke Tantangan Berikutnya 🚀
+          Next Challenge 🚀
         </button>
         <button id="close-win-modal-btn" type="button" class="btn-quantum-outline px-4 py-3 rounded-xl font-semibold text-sm">
-          Tutup
+          Close
         </button>
       </div>
     </div>
