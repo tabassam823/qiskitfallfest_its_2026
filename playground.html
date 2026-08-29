@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Visual Qubit Playground - Qiskit Fall Fest ITS 2026</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- KaTeX for Quantum Math Formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .canvas-container {
+      position: relative;
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 40, 104, 0.08), 0 8px 10px -6px rgba(0, 40, 104, 0.04);
+      overflow: hidden;
+    }
+    .tool-btn.active {
+      background-color: #002868;
+      color: #FFFFFF;
+      border-color: #002868;
+      box-shadow: 0 4px 12px rgba(0, 40, 104, 0.25);
+    }
+    .tab-btn.active {
+      background: #002868;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F7FB] text-slate-800 antialiased min-h-screen flex flex-col font-sans">
+
+  <!-- TOP FLYER ANNOUNCEMENT BANNER -->
+  <aside aria-label="Announcement" class="flyer-top-banner py-2 px-4 text-center text-xs font-mono font-semibold tracking-wide border-b border-blue-900/20">
+    <div class="max-w-7xl mx-auto flex items-center justify-center space-x-2">
+      <span class="animate-pulse">⚛</span>
+      <span>INTERACTIVE QUANTUM LAB • VISUAL QUBIT FLOW & GATE PUZZLES</span>
+      <span class="animate-pulse">⚛</span>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026 Badge" class="h-12 w-12 object-contain transition-transform group-hover:scale-105">
+          <div class="flex flex-col">
+            <div class="flex items-center space-x-1.5">
+              <span class="font-extrabold text-lg tracking-tight text-[#002868]">QISKIT FALL FEST</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-[#FFB703] text-[#002868] font-mono font-bold">2026</span>
+            </div>
+            <span class="text-xs text-slate-500 font-medium">Institut Teknologi Sepuluh Nopember</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index.html" class="nav-link py-2 text-sm">Home</a>
+          <a href="event.html" class="nav-link py-2 text-sm">Events & Schedule</a>
+          <a href="about.html" class="nav-link py-2 text-sm">About & Venue</a>
+          <a href="playground.html" class="nav-link py-2 text-sm active">Playground ⚛</a>
+          <a href="login.html" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2">
+            <span>Participant Portal</span>
+            <svg class="w-4 h-4 text-[#FFB703]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="lg:hidden flex items-center">
+          <button type="button" id="mobile-menu-button" class="p-2 rounded-xl text-slate-700 hover:text-[#002868] hover:bg-slate-100 focus:outline-none" aria-label="Menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
+        <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Home</a>
+        <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Events & Schedule</a>
+        <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About & Venue</a>
+        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium active">Playground ⚛</a>
+        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Participant Portal / Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow">
+    
+    <!-- PAGE HERO SECTION -->
+    <section class="py-12 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#E8F1FC] text-[#002868] text-xs font-mono font-bold">
+          <span>⚛ INTERACTIVE VISUAL QUANTUM SIMULATION</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-[#002868] tracking-tight">
+          Visual Qubit <span class="text-[#FFB703]">Playground & Puzzles</span>
+        </h1>
+        <p class="text-slate-600 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
+          Experience quantum mechanics visually! Draw wires to guide qubits flowing out of the source, apply quantum gates to rotate state vectors and create superposition, and solve puzzle challenges.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE LAB AREA -->
+    <section class="py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+
+        <!-- LEVEL / MODE TABS -->
+        <div class="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300 max-w-4xl mx-auto">
+          <button type="button" class="tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all" data-level="sandbox">
+            🌟 Free Sandbox
+          </button>
+          <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-700 hover:text-[#002868]" data-level="challenge1">
+            🏁 Challenge 1: Goal Angle (5π/4)
+          </button>
+          <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-700 hover:text-[#002868]" data-level="challenge2">
+            🎯 Challenge 2: Superposition (|+⟩)
+          </button>
+          <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-700 hover:text-[#002868]" data-level="challenge3">
+            🔀 Challenge 3: Bit Flip (|1⟩)
+          </button>
+          <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-700 hover:text-[#002868]" data-level="challenge4">
+            🧩 Challenge 4: Gate Combinator
+          </button>
+        </div>
+
+        <!-- LEVEL HEADER INFO BOX -->
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center space-x-2">
+              <h2 id="level-title" class="text-lg sm:text-xl font-extrabold text-[#002868]">Freeform Quantum Sandbox</h2>
+              <span id="level-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold font-mono bg-blue-100 text-blue-800">FREE MODE</span>
+            </div>
+            <p id="level-desc" class="text-xs sm:text-sm text-slate-600">
+              Place wires from the source (O→) and add gates (H, X, Z, R, Measurement 📸) to see how qubits transform in real-time.
+            </p>
+          </div>
+
+          <!-- Score & Metrics HUD -->
+          <div class="flex items-center space-x-4 bg-[#F8FAFC] px-4 py-2.5 rounded-xl border border-slate-200 shrink-0">
+            <div class="text-center">
+              <span class="text-[10px] uppercase font-bold text-slate-500 font-mono">Progress</span>
+              <div id="score-display" class="text-base font-extrabold text-[#002868] font-mono">0 / 0</div>
+            </div>
+            <div class="h-8 w-px bg-slate-300"></div>
+            <div class="text-center">
+              <span class="text-[10px] uppercase font-bold text-slate-500 font-mono">Active Gates</span>
+              <div id="active-gate-count" class="text-base font-extrabold text-[#FFB703] font-mono">0</div>
+            </div>
+            <div class="h-8 w-px bg-slate-300"></div>
+            <button id="reset-btn" type="button" class="p-2 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 hover:text-[#002868] transition-colors" title="Reset Circuit">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE CANVAS CONTAINER -->
+        <div class="canvas-container overflow-x-auto">
+          <canvas id="qubit-canvas" width="1152" height="256" class="w-full h-auto block cursor-crosshair" tabindex="1"></canvas>
+        </div>
+
+        <!-- TOOL PALETTE TOOLBAR -->
+        <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+              🎮 Toolbar & Quantum Gate Palette (Click to Select or use Keyboard):
+            </span>
+            <span class="text-xs text-slate-500 font-mono hidden sm:inline-block">
+              💡 Tip: Click or click+drag on grid to draw wires
+            </span>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            
+            <!-- Wire Tool -->
+            <button type="button" class="tool-btn active px-3.5 py-2 rounded-xl border border-slate-300 text-xs font-bold flex items-center space-x-1.5 transition-all" data-tool="wire">
+              <span>✏️ Wire</span>
+              <span class="text-[10px] opacity-75 font-mono">(Drag)</span>
+            </button>
+
+            <div class="h-6 w-px bg-slate-300 hidden sm:block mx-1"></div>
+
+            <!-- Pauli-X Gate -->
+            <button type="button" class="tool-btn px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 text-xs font-bold flex items-center space-x-1.5 hover:bg-slate-50 transition-all" data-tool="X" title="Pauli-X (NOT) Gate">
+              <span class="w-5 h-5 rounded bg-[#002868] text-white flex items-center justify-center text-[11px]">X</span>
+              <span>Pauli-X</span>
+              <span class="text-[10px] text-slate-400 font-mono">[x]</span>
+            </button>
+
+            <!-- Pauli-Z Gate -->
+            <button type="button" class="tool-btn px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 text-xs font-bold flex items-center space-x-1.5 hover:bg-slate-50 transition-all" data-tool="Z" title="Pauli-Z (Phase Flip) Gate">
+              <span class="w-5 h-5 rounded bg-[#002868] text-white flex items-center justify-center text-[11px]">Z</span>
+              <span>Pauli-Z</span>
+              <span class="text-[10px] text-slate-400 font-mono">[z]</span>
+            </button>
+
+            <!-- Hadamard Gate -->
+            <button type="button" class="tool-btn px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 text-xs font-bold flex items-center space-x-1.5 hover:bg-slate-50 transition-all" data-tool="H" title="Hadamard (Superposition) Gate">
+              <span class="w-5 h-5 rounded bg-[#002868] text-white flex items-center justify-center text-[11px]">H</span>
+              <span>Hadamard</span>
+              <span class="text-[10px] text-slate-400 font-mono">[h]</span>
+            </button>
+
+            <!-- Rotation Gate -->
+            <button type="button" class="tool-btn px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 text-xs font-bold flex items-center space-x-1.5 hover:bg-slate-50 transition-all" data-tool="R" title="Rotation 22.5° (π/8)">
+              <span class="w-5 h-5 rounded bg-[#002868] text-white flex items-center justify-center text-[11px]">⟲</span>
+              <span>Rotate 22.5°</span>
+              <span class="text-[10px] text-slate-400 font-mono">[r]</span>
+            </button>
+
+            <!-- Measurement Device -->
+            <button type="button" class="tool-btn px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 text-xs font-bold flex items-center space-x-1.5 hover:bg-slate-50 transition-all" data-tool="M" title="Measurement Apparatus">
+              <span class="text-base">📸</span>
+              <span>Measure</span>
+              <span class="text-[10px] text-slate-400 font-mono">[m]</span>
+            </button>
+
+            <div class="h-6 w-px bg-slate-300 hidden sm:block mx-1"></div>
+
+            <!-- Eraser Tool -->
+            <button type="button" class="tool-btn px-3.5 py-2 rounded-xl border border-red-200 text-red-700 bg-red-50 text-xs font-bold flex items-center space-x-1.5 hover:bg-red-100 transition-all" data-tool="erase" title="Eraser / Delete">
+              <span>🗑 Erase</span>
+              <span class="text-[10px] text-red-500 font-mono">[Del]</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- QISKIT PYTHON CODE GENERATOR PANEL -->
+        <div class="p-6 rounded-2xl bg-[#001840] text-white border border-blue-900 shadow-lg space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="text-[#FFB703]">🐍</span>
+              <h3 class="text-sm font-bold tracking-wide uppercase font-mono text-blue-200">Generated Qiskit Python Code</h3>
+            </div>
+            <button id="copy-code-btn" type="button" class="px-3 py-1.5 rounded-lg bg-blue-900/60 hover:bg-blue-800 text-xs font-mono font-semibold text-blue-100 transition-colors flex items-center space-x-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              <span>Copy Code</span>
+            </button>
+          </div>
+          <pre class="p-4 rounded-xl bg-slate-950 font-mono text-xs text-blue-300 overflow-x-auto leading-relaxed border border-blue-950" id="qiskit-code-block"><code>from qiskit import QuantumCircuit
+import numpy as np
+
+# Initialize 1-Qubit Circuit corresponding to your Visual Playground setup
+qc = QuantumCircuit(1, 1)
+
+# Default input state |0>
+# Place quantum gates (H, X, Z, R) on the wire to generate transformations!
+
+print(qc.draw())</code></pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL & THEORETICAL GUIDE -->
+    <section class="py-14 bg-white border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+        <div class="text-center space-y-3">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">How Visual Qubit Vectors Work</h2>
+          <p class="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
+            This visual model translates the abstract mathematical notation of quantum computing into intuitive 2D geometric vectors and reflections.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1: Basis States -->
+          <div class="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg font-mono">
+              |0⟩
+            </div>
+            <h3 class="text-base font-bold text-[#002868]">Computational Basis States</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              The arrow direction indicates the probability amplitude vector:
+            </p>
+            <ul class="text-xs text-slate-700 space-y-1.5 font-mono">
+              <li>• Pointing Right (→, Red) = \(|0\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}\)</li>
+              <li>• Pointing Left (←) = \(-|0\rangle = \begin{pmatrix}-1 \\ 0\end{pmatrix}\)</li>
+              <li>• Pointing Up (↑, Blue) = \(|1\rangle = \begin{pmatrix}0 \\ 1\end{pmatrix}\)</li>
+              <li>• Pointing Down (↓) = \(-|1\rangle = \begin{pmatrix}0 \\ -1\end{pmatrix}\)</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Superposition -->
+          <div class="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg font-mono">
+              |+⟩
+            </div>
+            <h3 class="text-base font-bold text-[#002868]">Quantum Superposition</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              When an arrow points diagonally (e.g. 45° or 225°), the qubit is in a linear combination of basis states:
+            </p>
+            <div class="p-3 rounded-xl bg-white border border-slate-200 text-xs font-mono text-center text-[#002868]">
+              \(|\psi\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}} = |+\rangle\)
+            </div>
+            <p class="text-xs text-slate-500">
+              The color smoothly transitions between red and blue according to the probability \(P(|0\rangle) = |\alpha|^2\).
+            </p>
+          </div>
+
+          <!-- Card 3: Quantum Gates & Measurement -->
+          <div class="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">
+              📸
+            </div>
+            <h3 class="text-base font-bold text-[#002868]">Quantum Measurement</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Real quantum computers only yield information via projective measurement. When a qubit hits a 📸 device, it randomly collapses to either \(|0\rangle\) or \(|1\rangle\) with probability \(P = |\alpha|^2\).
+            </p>
+            <p class="text-xs text-slate-500">
+              Gates act as geometric rotations and reflections across axes on the state vector.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="flyer-footer text-white text-sm relative mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center space-x-3">
+            <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Badge" class="h-10 w-10 object-contain">
+            <img src="assets/images/its-logo-white.svg" alt="ITS Surabaya" class="h-7 w-auto">
+          </div>
+          <h4 class="text-white font-bold text-base">Qiskit Fall Fest ITS 2026</h4>
+          <p class="text-blue-200 text-xs leading-relaxed max-w-md">
+            Official quantum computing festival organized by Institut Teknologi Sepuluh Nopember (ITS) in collaboration with IBM Quantum.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Quick Links</h5>
+          <ul class="space-y-1.5 text-xs text-blue-100">
+            <li><a href="index.html" class="hover:text-[#FFB703] transition-colors">Home</a></li>
+            <li><a href="event.html" class="hover:text-[#FFB703] transition-colors">Events & Schedule</a></li>
+            <li><a href="about.html" class="hover:text-[#FFB703] transition-colors">About & Campus Venue</a></li>
+            <li><a href="playground.html" class="hover:text-[#FFB703] transition-colors">Playground ⚛</a></li>
+            <li><a href="login.html" class="hover:text-[#FFB703] transition-colors">Participant Portal</a></li>
+          </ul>
+        </div>
+        <div class="space-y-2">
+          <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Get in Touch</h5>
+          <ul class="space-y-1.5 text-xs text-blue-100 font-mono">
+            <li>📧 <span class="template-tag">[Fill Committee Email]</span></li>
+            <li>🌐 <a href="https://www.its.ac.id" target="_blank" rel="noopener" class="hover:text-[#FFB703]">its.ac.id</a></li>
+            <li>📱 <span class="text-[#FFB703]">@ITS_campus</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-blue-900 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-blue-200">
+        <p>© 2026 Qiskit Fall Fest ITS • Institut Teknologi Sepuluh Nopember & IBM Quantum.</p>
+        <p>Interactive Visual Qubit Model based on Elliot's architecture (@vezwork).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/qubit-playground.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('qubit-canvas');
+      if (!canvas || !window.QubitPlayground) return;
+
+      const { Game, Levels, Gates } = window.QubitPlayground;
+      let currentGame = null;
+      let activeLevelKey = 'sandbox';
+
+      const levelTitle = document.getElementById('level-title');
+      const levelDesc = document.getElementById('level-desc');
+      const levelBadge = document.getElementById('level-badge');
+      const scoreDisplay = document.getElementById('score-display');
+      const qiskitCodeBlock = document.getElementById('qiskit-code-block');
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const toolButtons = document.querySelectorAll('.tool-btn');
+      const resetBtn = document.getElementById('reset-btn');
+      const copyCodeBtn = document.getElementById('copy-code-btn');
+
+      // Update Qiskit Code Block
+      function updateQiskitCode() {
+        if (!currentGame) return;
+        const grid = currentGame.circuit.grid;
+        const gateList = [];
+
+        for (let x = 0; x < currentGame.width / currentGame.gridSize; x++) {
+          for (let y = 0; y < currentGame.height / currentGame.gridSize; y++) {
+            const entry = grid[x]?.[y];
+            if (entry?.type === window.QubitPlayground.CircuitGrid.BOX && entry?.data?.typeKey) {
+              gateList.push(entry.data.typeKey);
+            }
+          }
+        }
+
+        let code = 'from qiskit import QuantumCircuit\nimport numpy as np\n\n# 1-Qubit Visual Flow Circuit\nqc = QuantumCircuit(1, 1)\n\n';
+        if (gateList.length === 0) {
+          code += '# No gates added yet. Input state is |0>\n';
+        } else {
+          gateList.forEach((gate) => {
+            if (gate === 'X') code += 'qc.x(0)      # Pauli-X (NOT / Bit-Flip)\n';
+            if (gate === 'Z') code += 'qc.z(0)      # Pauli-Z (Phase-Flip)\n';
+            if (gate === 'H') code += 'qc.h(0)      # Hadamard (Superposition)\n';
+            if (gate === 'R') code += 'qc.rz(np.pi/4, 0) # Phase Rotation\n';
+            if (gate === 'M') code += 'qc.measure(0, 0) # Measurement\n';
+          });
+        }
+        code += '\nprint(qc.draw())';
+        if (qiskitCodeBlock) qiskitCodeBlock.textContent = code;
+      }
+
+      // Initialize Level
+      function startLevel(key) {
+        activeLevelKey = key;
+        const level = Levels[key] || Levels.sandbox;
+
+        if (currentGame) {
+          currentGame.destroy();
+        }
+
+        if (levelTitle) levelTitle.textContent = level.title;
+        if (levelDesc) levelDesc.textContent = level.description;
+        if (levelBadge) {
+          levelBadge.textContent = level.targetScore > 0 ? `TARGET: ${level.targetScore} QUBITS` : 'FREE MODE';
+          levelBadge.className = level.targetScore > 0 
+            ? 'px-2.5 py-0.5 rounded-full text-xs font-bold font-mono bg-amber-100 text-amber-900' 
+            : 'px-2.5 py-0.5 rounded-full text-xs font-bold font-mono bg-blue-100 text-blue-800';
+        }
+        if (scoreDisplay) {
+          scoreDisplay.textContent = `0 / ${level.targetScore}`;
+        }
+
+        currentGame = new Game(canvas, {
+          gridSize: 64,
+          targetScore: level.targetScore,
+          onInit(circuit) {
+            level.init(circuit, 64);
+          },
+          onLoop(circuit, width, height, ctx) {
+            level.loop(circuit, width, height, ctx);
+            updateQiskitCode();
+          }
+        });
+
+        // Sync selected tool to new input instance
+        const activeToolBtn = document.querySelector('.tool-btn.active');
+        if (activeToolBtn && currentGame) {
+          currentGame.input.selectedTool = activeToolBtn.getAttribute('data-tool');
+        }
+      }
+
+      // Score Update Callback
+      window.onQubitPlaygroundScore = (score, target) => {
+        if (scoreDisplay) {
+          scoreDisplay.textContent = `${score} / ${target}`;
+        }
+      };
+
+      // Tab switching
+      tabButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach((b) => b.classList.remove('active', 'text-white'));
+          tabButtons.forEach((b) => b.classList.add('text-slate-700'));
+          btn.classList.add('active');
+          btn.classList.remove('text-slate-700');
+          startLevel(btn.getAttribute('data-level'));
+        });
+      });
+
+      // Tool selection
+      toolButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          toolButtons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          if (currentGame) {
+            currentGame.input.selectedTool = btn.getAttribute('data-tool');
+          }
+        });
+      });
+
+      // Reset button
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (currentGame) currentGame.reset();
+        });
+      }
+
+      // Copy Qiskit Code Button
+      if (copyCodeBtn) {
+        copyCodeBtn.addEventListener('click', () => {
+          if (qiskitCodeBlock) {
+            navigator.clipboard.writeText(qiskitCodeBlock.textContent);
+            copyCodeBtn.innerHTML = '<span>✓ Copied!</span>';
+            setTimeout(() => {
+              copyCodeBtn.innerHTML = `
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span>Copy Code</span>`;
+            }, 2000);
+          }
+        });
+      }
+
+      // Initial Level start
+      startLevel('sandbox');
+    });
+  </script>
+</body>
+</html>
