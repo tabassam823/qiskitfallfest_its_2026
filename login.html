@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Participant Portal & Sign In - Qiskit Fall Fest ITS 2026</title>
-  <meta name="description" content="Participant login and registration portal for Qiskit Fall Fest 2026 at Institut Teknologi Sepuluh Nopember (ITS).">
+  <title>Official Registration Form - Qiskit Fall Fest ITS 2026</title>
+  <meta name="description" content="Official registration portal and participant form for Qiskit Fall Fest 2026 at Institut Teknologi Sepuluh Nopember (ITS) Surabaya.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/qiskitfallfest2026_transparent_square.png">
@@ -70,8 +70,8 @@
           <a href="event.html" class="nav-link py-2 text-sm">Events & Schedule</a>
           <a href="about.html" class="nav-link py-2 text-sm">About & Venue</a>
           <a href="playground.html" class="nav-link py-2 text-sm">Playground ⚛</a>
-          <a href="login.html" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2 active">
-            <span>Participant Portal</span>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSehB4EUw3exCDpAfyFzOphwt1jqKILqToC1QT4zJ_kIH43UMQ/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2 active">
+            <span>Register Now</span>
             <svg class="w-4 h-4 text-[#FFB703]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
@@ -94,193 +94,81 @@
         <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Events & Schedule</a>
         <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About & Venue</a>
         <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground ⚛</a>
-        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Participant Portal / Register</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSehB4EUw3exCDpAfyFzOphwt1jqKILqToC1QT4zJ_kIH43UMQ/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Register via Google Form ↗</a>
       </div>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 z-10">
+  <main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-10 z-10">
     
-    <!-- AUTH CARD -->
-    <div class="max-w-lg w-full">
-      <div class="flyer-card p-8 sm:p-10 border-2 border-blue-200 bg-white shadow-xl">
-        
-        <!-- Header -->
-        <div class="text-center mb-6 space-y-2">
-          <div class="w-16 h-16 rounded-2xl bg-[#E8F1FC] p-2 mx-auto mb-2 flex items-center justify-center border border-blue-200">
-            <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Badge" class="w-full h-full object-contain">
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">Participant Portal</h2>
-          <p class="text-xs sm:text-sm text-slate-500 font-mono">
-            Qiskit Fall Fest 2026 • Custom Database Sandbox
-          </p>
+    <div class="max-w-4xl w-full space-y-6">
+      
+      <!-- Top Registration Banner -->
+      <div class="flyer-card p-6 sm:p-8 border-2 border-blue-200 bg-white text-center space-y-4 shadow-xl">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#E8F1FC] text-[#002868] text-xs font-mono font-bold">
+          <span>✨ OFFICIAL PARTICIPANT REGISTRATION</span>
         </div>
+        <h1 class="text-2xl sm:text-4xl font-extrabold text-[#002868] tracking-tight">
+          Join Qiskit Fall Fest <span class="text-[#00509D]">ITS 2026</span>
+        </h1>
+        <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+          Fill out the official registration form below to secure your spot for the workshops, IBM Quantum cloud access, and the national hackathon.
+        </p>
 
-        <!-- Notification Alert Box -->
-        <div id="auth-alert" class="hidden"></div>
-
-        <!-- Mode Tab Switcher: Sign In vs Sign Up -->
-        <div class="flex p-1 mb-6 bg-slate-100 rounded-xl border border-slate-200">
-          <button type="button" id="tab-login-btn" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all bg-[#002868] text-white shadow-sm">
-            Sign In
-          </button>
-          <button type="button" id="tab-register-btn" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-[#002868]">
-            Create Account
-          </button>
+        <!-- Direct Form Action Button -->
+        <div class="flex flex-wrap justify-center gap-3 pt-2">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSehB4EUw3exCDpAfyFzOphwt1jqKILqToC1QT4zJ_kIH43UMQ/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-flyer-yellow px-6 py-3 rounded-full text-xs sm:text-sm font-extrabold flex items-center space-x-2 shadow-md">
+            <span>Open in Full Screen (Google Forms)</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
         </div>
-
-        <!-- Single Sign-On (SSO) Options -->
-        <div class="space-y-3 mb-6">
-          <div class="text-xs text-slate-500 font-mono text-center uppercase tracking-wider">Fast Access with Single Sign-On:</div>
-          
-          <div class="grid grid-cols-3 gap-3">
-            
-            <!-- Google -->
-            <button type="button" class="sso-btn p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-[#F8FAFD] hover:bg-slate-50 text-xs font-semibold flex items-center justify-center space-x-2 transition-all group shadow-sm" data-provider="Google">
-              <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-              <span class="group-hover:text-[#002868] font-medium">Google</span>
-            </button>
-
-            <!-- GitHub -->
-            <button type="button" class="sso-btn p-3 rounded-xl border border-slate-200 hover:border-purple-400 bg-[#F8FAFD] hover:bg-slate-50 text-xs font-semibold flex items-center justify-center space-x-2 transition-all group shadow-sm" data-provider="GitHub">
-              <svg class="w-5 h-5 flex-shrink-0 fill-current text-slate-800 group-hover:text-black" viewBox="0 0 24 24">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-              </svg>
-              <span class="group-hover:text-[#002868] font-medium">GitHub</span>
-            </button>
-
-            <!-- IBMid -->
-            <button type="button" class="sso-btn p-3 rounded-xl border border-slate-200 hover:border-blue-400 bg-[#F8FAFD] hover:bg-slate-50 text-xs font-semibold flex items-center justify-center space-x-2 transition-all group shadow-sm" data-provider="IBMid">
-              <svg class="w-6 h-5 flex-shrink-0" viewBox="0 0 32 14" fill="#002868">
-                <path d="M0 0h8v1.2H0zm0 2.4h8v1.2H0zm0 2.4h8v1.2H0zm0 2.4h8v1.2H0zm0 2.4h8v1.2H0zm0 2.4h8v1.2H0zm0 2.4h8V14H0zM12 0h9a4 4 0 0 1 0 6.5 4 4 0 0 1 0 7.5H12zm2 1.5v1.2h7a1.5 1.5 0 0 0 0-3zm0 2.4v1.2h7a1.5 1.5 0 0 0 0-3zm0 4.8v1.2h7a1.5 1.5 0 0 0 0-3zm0 2.4v1.2h7a1.5 1.5 0 0 0 0-3zM25 0h7v1.2h-7zm0 2.4h7v1.2h-7zm0 2.4h7v1.2h-7zm0 2.4h7v1.2h-7zm0 2.4h7v1.2h-7zm0 2.4h7v1.2h-7zm0 2.4h7V14h-7z"/>
-              </svg>
-              <span class="group-hover:text-[#002868] font-mono font-bold">IBMid</span>
-            </button>
-
-          </div>
-        </div>
-
-        <div class="flex items-center my-6">
-          <div class="flex-grow border-t border-slate-200"></div>
-          <span class="px-3 text-xs font-mono text-slate-400 uppercase">Or with email</span>
-          <div class="flex-grow border-t border-slate-200"></div>
-        </div>
-
-        <!-- 1. Sign In Form -->
-        <form id="form-login" class="space-y-4">
-          <div>
-            <label for="login-email" class="block text-xs font-mono font-semibold text-slate-700 mb-1.5">
-              Account Email:
-            </label>
-            <input 
-              type="email" 
-              id="login-email" 
-              name="email" 
-              required 
-              placeholder="name@its.ac.id / user@email.com" 
-              class="clean-input w-full px-4 py-3 text-sm font-mono placeholder:text-slate-400">
-          </div>
-
-          <div>
-            <div class="flex justify-between items-center mb-1.5">
-              <label for="login-password" class="block text-xs font-mono font-semibold text-slate-700">
-                Password:
-              </label>
-              <a href="#" class="text-xs text-[#00509D] hover:underline font-semibold">Forgot password?</a>
-            </div>
-            <input 
-              type="password" 
-              id="login-password" 
-              name="password" 
-              required 
-              placeholder="••••••••" 
-              class="clean-input w-full px-4 py-3 text-sm placeholder:text-slate-400">
-          </div>
-
-          <div class="flex items-center justify-between py-1 text-xs text-slate-500">
-            <label class="flex items-center space-x-2 cursor-pointer">
-              <input type="checkbox" class="rounded border-slate-300 text-[#002868] focus:ring-[#00509D]">
-              <span>Remember me</span>
-            </label>
-          </div>
-
-          <button type="submit" class="btn-flyer-primary w-full py-3.5 rounded-full font-bold text-sm tracking-wide shadow-md">
-            Sign In to Portal 🚀
-          </button>
-        </form>
-
-        <!-- 2. Sign Up Form (Custom Database Register) -->
-        <form id="form-register" class="space-y-4 hidden">
-          <div>
-            <label for="reg-fullname" class="block text-xs font-mono font-semibold text-slate-700 mb-1.5">
-              Full Name:
-            </label>
-            <input 
-              type="text" 
-              id="reg-fullname" 
-              name="fullname" 
-              required 
-              placeholder="Alex Quantum" 
-              class="clean-input w-full px-4 py-3 text-sm placeholder:text-slate-400">
-          </div>
-
-          <div>
-            <label for="reg-email" class="block text-xs font-mono font-semibold text-slate-700 mb-1.5">
-              Email Address:
-            </label>
-            <input 
-              type="email" 
-              id="reg-email" 
-              name="email" 
-              required 
-              placeholder="alex@its.ac.id" 
-              class="clean-input w-full px-4 py-3 text-sm font-mono placeholder:text-slate-400">
-          </div>
-
-          <div>
-            <label for="reg-institution" class="block text-xs font-mono font-semibold text-slate-700 mb-1.5">
-              University / Institution:
-            </label>
-            <input 
-              type="text" 
-              id="reg-institution" 
-              name="institution" 
-              required 
-              placeholder="Institut Teknologi Sepuluh Nopember" 
-              class="clean-input w-full px-4 py-3 text-sm placeholder:text-slate-400">
-          </div>
-
-          <div>
-            <label for="reg-password" class="block text-xs font-mono font-semibold text-slate-700 mb-1.5">
-              Create Password:
-            </label>
-            <input 
-              type="password" 
-              id="reg-password" 
-              name="password" 
-              required 
-              placeholder="At least 8 characters" 
-              class="clean-input w-full px-4 py-3 text-sm placeholder:text-slate-400">
-          </div>
-
-          <button type="submit" class="btn-flyer-yellow w-full py-3.5 rounded-full font-extrabold text-sm tracking-wide shadow-md">
-            Create Account ★
-          </button>
-        </form>
-
       </div>
+
+      <!-- Google Form Embedded Container -->
+      <div class="flyer-card p-2 sm:p-4 border-2 border-slate-200 bg-white shadow-xl overflow-hidden rounded-3xl">
+        <div class="w-full relative min-h-[900px]">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSehB4EUw3exCDpAfyFzOphwt1jqKILqToC1QT4zJ_kIH43UMQ/viewform?embedded=true" 
+            width="100%" 
+            height="950" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+            class="w-full rounded-2xl border-0"
+            title="Qiskit Fall Fest ITS 2026 Registration Form">
+            Loading registration form...
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Quick Assistance Callout -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <div class="p-4 rounded-2xl bg-white border border-slate-200">
+          <div class="text-lg mb-1">🎟</div>
+          <div class="text-xs font-bold text-[#002868]">Free Registration</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Open to all university students & researchers</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white border border-slate-200">
+          <div class="text-lg mb-1">☁️</div>
+          <div class="text-xs font-bold text-[#002868]">IBM Quantum Access</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Hands-on run on real quantum cloud hardware</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white border border-slate-200">
+          <div class="text-lg mb-1">📜</div>
+          <div class="text-xs font-bold text-[#002868]">Official Certificate</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Verified certificates from ITS & IBM Quantum</div>
+        </div>
+      </div>
+
     </div>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="flyer-footer text-white text-sm relative">
+  <footer class="flyer-footer text-white text-sm relative mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-xs text-blue-200">
       <p>© 2026 Qiskit Fall Fest ITS • Institut Teknologi Sepuluh Nopember & IBM Quantum.</p>
     </div>
@@ -288,6 +176,5 @@
 
   <!-- JavaScript Modules -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/auth.js"></script>
 </body>
 </html>
