@@ -1,0 +1,11 @@
+Date,Week,Event Name,Format,Topic/Description,Status
+2026-10-03,Week 1,Foundation Theory I: Basics,Online,"Introduction to Quantum Mechanics, Qubits, and Linear Algebra basics",Planned
+2026-10-10,Week 2,Foundation Theory II: Circuits,Online,"Quantum Gates, Circuit construction, and Variational Quantum Circuits (VQC)",Planned
+2026-10-17,Week 3,Advance topic I,Online,"Quantum Machine Learning foundations & Quantum Reservoir Computing, Quantum Device, Quantum Finance, Quantum Algorithm",Planned
+2026-10-24,Week 4,Advance topic II,Online,"Quantum Optimization, Quantum Chemistry, Quantum in Financial Straight-trough Processing, Quantum Teleportation, PQC",Planned
+2026-10-24,Week 4,Ideation & Team Building,Online,Brainstorming potential projects and finalizing hackathon teams,Planned
+2026-10-28,Week 4,IBM Quantum Special Session,Online,Qiskit 101 by IBM Quantum,Confirmed
+2026-11-07,Week 5,Fall Fest Kickoff Ceremony,Hybrid,"First Ceremonial Event: Opening remarks, keynote, and hackathon guidelines (ITS Surabaya & Online)",Planned
+2026-11-14,Week 6,Mid-Fest Symposium & Check-in,Hybrid,"Second Ceremonial Event: Progress presentation, networking, and expert talks",Planned
+2026-11-16 to 2026-11-29,Week 7-8,Qiskit Fall Fest Hackathon,Online,Main Hackathon coding period with asynchronous mentor support,Planned
+2026-11-30,Week 9,Hackathon Submission & Wrap-up,Online,Final project submission deadline and online closing remarks,Planned
