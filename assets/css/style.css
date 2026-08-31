@@ -28,10 +28,10 @@
   --border-light: rgba(0, 80, 157, 0.12);
   --border-card: #E2E8F0;
 
-  /* Default Soft Modern Font (Outfit) */
-  --font-main: 'Outfit', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Default Soft Modern Font (Poppins) */
+  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-code: 'JetBrains Mono', monospace;
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
 }
 
 /* Font Switcher Variations */
@@ -286,79 +286,3 @@ body {
   color: #FFFFFF;
   border-top: 4px solid #FFB703;
 }
-
-/* Floating Font Switcher Tool */
-.font-switcher-widget {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 9999;
-  font-family: var(--font-main);
-}
-
-.font-switcher-btn {
-  background: #FFFFFF;
-  color: #002868;
-  border: 1.5px solid rgba(0, 80, 157, 0.2);
-  box-shadow: 0 10px 25px -5px rgba(0, 40, 104, 0.15);
-  border-radius: 9999px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.font-switcher-btn:hover {
-  background: #F0F6FD;
-  border-color: #00509D;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -5px rgba(0, 40, 104, 0.22);
-}
-
-.font-switcher-dropdown {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 0;
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 80, 157, 0.15);
-  border-radius: 16px;
-  padding: 10px;
-  box-shadow: 0 20px 40px -10px rgba(0, 40, 104, 0.25);
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.font-switcher-item {
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  background: #F8FAFD;
-  color: #1E293B;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.font-switcher-item:hover {
-  background: #E8F1FC;
-  border-color: rgba(0, 80, 157, 0.2);
-  color: #002868;
-}
-
-.font-switcher-item.active {
-  background: #002868;
-  color: #FFFFFF;
-  font-weight: 700;
-}
-

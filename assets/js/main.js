@@ -3,10 +3,7 @@
  */
 
 // Immediate font application from localStorage
-(function () {
-  const savedFont = localStorage.getItem('qiskit_font_choice') || 'outfit';
-  document.documentElement.setAttribute('data-font', savedFont);
-})();
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Menu Toggle
@@ -59,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 4. Interactive Font Switcher Previewer Widget
-  initFontSwitcher();
+
 });
 
 function initFontSwitcher() {
