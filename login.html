@@ -45,31 +45,31 @@
 </head>
 <body class="bg-[#F8FAFD] text-slate-900 min-h-screen flex flex-col justify-between selection:bg-amber-300 selection:text-blue-950 quantum-subtle-bg font-sans">
 
-  <!-- Header / Navigation -->
+  <!-- Header / Navigation (Clean White & Navy) -->
   <header class="sticky top-0 z-50 flyer-nav">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         
         <!-- Brand / Logos -->
-        <a href="index.html" class="flex items-center space-x-3 group">
-          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026" class="h-12 w-12 object-contain">
-          <div class="h-8 w-[1.5px] bg-slate-300 mx-1 hidden sm:block"></div>
-          <img src="assets/images/its-logo-blue.svg" alt="Institut Teknologi Sepuluh Nopember" class="h-8 w-auto object-contain hidden sm:block">
+        <a href="index.html" class="flex items-center space-x-2 lg:space-x-3 group shrink-0">
+          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+          <div class="h-8 w-[1.5px] bg-slate-300 mx-1 hidden lg:block"></div>
+          <img src="assets/images/its-logo-blue.svg" alt="ITS" class="h-8 w-auto object-contain hidden lg:block">
           <div class="flex flex-col">
-            <div class="flex items-center space-x-2">
-              <span class="font-extrabold text-lg tracking-tight text-[#002868]">QISKIT FALL FEST</span>
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
+              <span class="font-extrabold text-base sm:text-lg tracking-tight text-[#002868] whitespace-nowrap">QISKIT FALL FEST</span>
               <span class="text-xs px-2 py-0.5 rounded-full bg-[#FFB703] text-[#002868] font-mono font-bold">2026</span>
             </div>
-            <span class="text-xs text-slate-500 font-medium">Institut Teknologi Sepuluh Nopember</span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-medium truncate max-w-[160px] sm:max-w-none">Institut Teknologi Sepuluh Nopember</span>
           </div>
         </a>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden lg:flex items-center space-x-8">
           <a href="index.html" class="nav-link py-2 text-sm">Home</a>
           <a href="event.html" class="nav-link py-2 text-sm">Events & Schedule</a>
           <a href="about.html" class="nav-link py-2 text-sm">About & Venue</a>
-          <a href="playground.html" class="nav-link py-2 text-sm">Playground ⚛</a>
+          <a href="playground.html" class="nav-link py-2 text-sm">Playground</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSehB4EUw3exCDpAfyFzOphwt1jqKILqToC1QT4zJ_kIH43UMQ/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2 active">
             <span>Register Now</span>
             <svg class="w-4 h-4 text-[#FFB703]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
         </div>
 
         <!-- Mobile Hamburger Button -->
-        <div class="md:hidden flex items-center">
+        <div class="lg:hidden flex items-center">
           <button type="button" id="mobile-menu-button" class="p-2 rounded-xl text-slate-700 hover:text-[#002868] hover:bg-slate-100 focus:outline-none" aria-label="Menu">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -89,11 +89,11 @@
       </div>
 
       <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu" class="hidden md:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
+      <div id="mobile-menu" class="hidden lg:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
         <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Home</a>
         <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Events & Schedule</a>
         <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About & Venue</a>
-        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground ⚛</a>
+        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSehB4EUw3exCDpAfyFzOphwt1jqKILqToC1QT4zJ_kIH43UMQ/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Register via Google Form ↗</a>
       </div>
     </nav>

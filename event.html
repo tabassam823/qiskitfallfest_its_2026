@@ -45,31 +45,31 @@
 </head>
 <body class="bg-[#F8FAFD] text-slate-900 min-h-screen flex flex-col selection:bg-amber-300 selection:text-blue-950 quantum-subtle-bg font-sans">
 
-  <!-- Header / Navigation -->
+  <!-- Header / Navigation (Clean White & Navy) -->
   <header class="sticky top-0 z-50 flyer-nav">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         
         <!-- Brand / Logos -->
-        <a href="index.html" class="flex items-center space-x-3 group">
-          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026" class="h-12 w-12 object-contain">
-          <div class="h-8 w-[1.5px] bg-slate-300 mx-1 hidden sm:block"></div>
-          <img src="assets/images/its-logo-blue.svg" alt="Institut Teknologi Sepuluh Nopember" class="h-8 w-auto object-contain hidden sm:block">
+        <a href="index.html" class="flex items-center space-x-2 lg:space-x-3 group shrink-0">
+          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+          <div class="h-8 w-[1.5px] bg-slate-300 mx-1 hidden lg:block"></div>
+          <img src="assets/images/its-logo-blue.svg" alt="ITS" class="h-8 w-auto object-contain hidden lg:block">
           <div class="flex flex-col">
-            <div class="flex items-center space-x-2">
-              <span class="font-extrabold text-lg tracking-tight text-[#002868]">QISKIT FALL FEST</span>
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
+              <span class="font-extrabold text-base sm:text-lg tracking-tight text-[#002868] whitespace-nowrap">QISKIT FALL FEST</span>
               <span class="text-xs px-2 py-0.5 rounded-full bg-[#FFB703] text-[#002868] font-mono font-bold">2026</span>
             </div>
-            <span class="text-xs text-slate-500 font-medium">Institut Teknologi Sepuluh Nopember</span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-medium truncate max-w-[160px] sm:max-w-none">Institut Teknologi Sepuluh Nopember</span>
           </div>
         </a>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden lg:flex items-center space-x-8">
           <a href="index.html" class="nav-link py-2 text-sm">Home</a>
           <a href="event.html" class="nav-link py-2 text-sm active">Events & Schedule</a>
           <a href="about.html" class="nav-link py-2 text-sm">About & Venue</a>
-          <a href="playground.html" class="nav-link py-2 text-sm">Playground ⚛</a>
+          <a href="playground.html" class="nav-link py-2 text-sm">Playground</a>
           <a href="login.html" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2">
             <span>Registration Form</span>
             <svg class="w-4 h-4 text-[#FFB703]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
         </div>
 
         <!-- Mobile Hamburger Button -->
-        <div class="md:hidden flex items-center">
+        <div class="lg:hidden flex items-center">
           <button type="button" id="mobile-menu-button" class="p-2 rounded-xl text-slate-700 hover:text-[#002868] hover:bg-slate-100 focus:outline-none" aria-label="Menu">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -89,11 +89,11 @@
       </div>
 
       <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu" class="hidden md:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
+      <div id="mobile-menu" class="hidden lg:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
         <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Home</a>
         <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium active">Events & Schedule</a>
         <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About & Venue</a>
-        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground ⚛</a>
+        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground</a>
         <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Register via Google Form ↗</a>
       </div>
     </nav>
@@ -136,11 +136,44 @@
       </div>
     </section>
 
-    <!-- TIMELINE SCHEDULE SECTION (Clean Cards with Template Placeholders) -->
+    <!-- TIMELINE SCHEDULE SECTION -->
     <section class="py-14">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         
-        <!-- Foundation Theory I: Basics -->
+        <!-- 1. QFF Opening, Intro to Quantum Information -->
+        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#00509D]" data-category="preevent">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#00509D] border border-blue-200">Opening Session / Pre-Event</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
+              </div>
+              <h3 class="text-xl font-bold text-[#002868]">QFF Opening & Intro to Quantum Information</h3>
+              <p class="text-slate-600 text-sm">
+                Opening introduction to Qiskit Fall Fest ITS 2026 and core fundamentals of Quantum Information.
+              </p>
+              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
+                <span>📅 Date: <strong class="text-[#002868]">2026-10-07</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
+                <span>🎙 Speakers: <strong class="text-[#002868]">Riza Alaudin Syah, M.Sc., Dr. Muhammad Taufiqi, M.Si</strong></span>
+                <span>👤 Moderator: <strong class="text-[#002868]">Irwan</strong></span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
+                data-title="QFF Opening & Intro to Quantum Information"
+                data-date="2026-10-07"
+                data-time="16:00 WIB"
+                data-type="Online"
+                data-desc="Opening introduction to Qiskit Fall Fest ITS 2026 and core fundamentals of Quantum Information."
+                data-speaker="Riza Alaudin Syah, M.Sc., Dr. Muhammad Taufiqi, M.Si (Speakers), Irwan (Moderator)">
+                Session Details 🔍
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Foundation of Quantum Circuit -->
         <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="training">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
@@ -148,31 +181,64 @@
                 <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Training Series</span>
                 <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
               </div>
-              <h3 class="text-xl font-bold text-[#002868]">Foundation Theory I: Basics</h3>
+              <h3 class="text-xl font-bold text-[#002868]">Foundation of Quantum Circuit</h3>
               <p class="text-slate-600 text-sm">
-                Introduction to Quantum Mechanics, Qubits, and Linear Algebra basics
+                Fundamental principles of quantum circuits, quantum logic gates, and circuit representations.
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-10-03</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
+                <span>📅 Date: <strong class="text-[#002868]">2026-10-12</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
+                <span>🎙 Speaker: <strong class="text-[#002868]">Riza Alaudin Syah, M.Sc.</strong></span>
+                <span>👤 Moderator: <strong class="text-[#002868]">Dr. Muhammad Taufiqi, M.Si</strong></span>
               </div>
             </div>
             <div class="flex-shrink-0">
               <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Foundation Theory I: Basics"
-                data-date="2026-10-03"
-                data-time="TBA"
+                data-title="Foundation of Quantum Circuit"
+                data-date="2026-10-12"
+                data-time="16:00 WIB"
                 data-type="Online"
-                data-desc="Introduction to Quantum Mechanics, Qubits, and Linear Algebra basics"
-                data-speaker="TBA">
+                data-desc="Fundamental principles of quantum circuits, quantum logic gates, and circuit representations."
+                data-speaker="Riza Alaudin Syah, M.Sc. (Speaker), Dr. Muhammad Taufiqi, M.Si (Moderator)">
                 Session Details 🔍
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Foundation Theory II: Circuits -->
+        <!-- 3. Opening Ceremony and Launch ITS Quantum Hub -->
+        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#FFB703]" data-category="ceremony">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FFF8E1] text-[#B45309] border border-amber-300">Grand Opening</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-100 text-blue-900 font-bold">Hybrid (ITS Surabaya & Online)</span>
+              </div>
+              <h3 class="text-xl font-bold text-[#002868]">Opening Ceremony & Launch ITS Quantum Hub</h3>
+              <p class="text-slate-600 text-sm">
+                Official ceremonial opening of Qiskit Fall Fest ITS 2026 and inaugural launching of ITS Quantum Hub.
+              </p>
+              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
+                <span>📅 Date: <strong class="text-[#002868]">2026-10-14</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">10:00 WIB</strong></span>
+                <span>🎙 Keynotes: <strong class="text-[#002868]">Wakil Rektor ITS, Prof. Khoirul Anwar</strong></span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
+                data-title="Opening Ceremony & Launch ITS Quantum Hub"
+                data-date="2026-10-14"
+                data-time="10:00 WIB"
+                data-type="Hybrid (ITS Surabaya & Online)"
+                data-desc="Official ceremonial opening of Qiskit Fall Fest ITS 2026 and inaugural launching of ITS Quantum Hub."
+                data-speaker="Wakil Rektor ITS, Prof. Khoirul Anwar">
+                Session Details 🔍
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Quantum Algorithm -->
         <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="training">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
@@ -180,23 +246,23 @@
                 <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Training Series</span>
                 <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
               </div>
-              <h3 class="text-xl font-bold text-[#002868]">Foundation Theory II: Circuits</h3>
+              <h3 class="text-xl font-bold text-[#002868]">Quantum Algorithm</h3>
               <p class="text-slate-600 text-sm">
-                Quantum Gates, Circuit construction, and Variational Quantum Circuits (VQC)
+                Deep dive into essential quantum algorithms, speedup mechanisms, and computational models.
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-10-10</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
+                <span>📅 Date: <strong class="text-[#002868]">2026-10-26</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
                 <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
               </div>
             </div>
             <div class="flex-shrink-0">
               <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Foundation Theory II: Circuits"
-                data-date="2026-10-10"
-                data-time="TBA"
+                data-title="Quantum Algorithm"
+                data-date="2026-10-26"
+                data-time="16:00 WIB"
                 data-type="Online"
-                data-desc="Quantum Gates, Circuit construction, and Variational Quantum Circuits (VQC)"
+                data-desc="Deep dive into essential quantum algorithms, speedup mechanisms, and computational models."
                 data-speaker="TBA">
                 Session Details 🔍
               </button>
@@ -204,7 +270,40 @@
           </div>
         </div>
 
-        <!-- Advance topic I -->
+        <!-- 5. Introduction to Qiskit -->
+        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#00509D]" data-category="training">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#00509D] border border-blue-200">IBM Special Session</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
+              </div>
+              <h3 class="text-xl font-bold text-[#002868]">Introduction to Qiskit</h3>
+              <p class="text-slate-600 text-sm">
+                Exclusive hands-on masterclass on Qiskit SDK 1.x by IBM Quantum specialists.
+              </p>
+              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
+                <span>📅 Date: <strong class="text-[#002868]">2026-10-28</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">20:00 WIB</strong></span>
+                <span>🎙 Speaker: <strong class="text-[#002868]">IBM Quantum</strong></span>
+                <span>👤 Moderator: <strong class="text-[#002868]">Riza Alaudin Syah, M.Sc.</strong></span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
+                data-title="Introduction to Qiskit"
+                data-date="2026-10-28"
+                data-time="20:00 WIB"
+                data-type="Online"
+                data-desc="Exclusive hands-on masterclass on Qiskit SDK 1.x by IBM Quantum specialists."
+                data-speaker="IBM Quantum (Speaker), Riza Alaudin Syah, M.Sc. (Moderator)">
+                Session Details 🔍
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Quantum Mechanics -->
         <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="training">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
@@ -212,31 +311,32 @@
                 <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Training Series</span>
                 <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
               </div>
-              <h3 class="text-xl font-bold text-[#002868]">Advance topic I</h3>
+              <h3 class="text-xl font-bold text-[#002868]">Quantum Mechanics</h3>
               <p class="text-slate-600 text-sm">
-                Quantum Machine Learning foundations & Quantum Reservoir Computing, Quantum Device, Quantum Finance, Quantum Algorithm
+                Foundations of Quantum Mechanics and theoretical principles applied to modern quantum technology.
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-10-17</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
+                <span>📅 Date: <strong class="text-[#002868]">2026-11-04</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
+                <span>🎙 Speaker: <strong class="text-[#002868]">BRIN / Fisika ITS / Cakrawala Univ</strong></span>
+                <span>👤 Moderator: <strong class="text-[#002868]">Dr. Muhammad Taufiqi, M.Si</strong></span>
               </div>
             </div>
             <div class="flex-shrink-0">
               <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Advance topic I"
-                data-date="2026-10-17"
-                data-time="TBA"
+                data-title="Quantum Mechanics"
+                data-date="2026-11-04"
+                data-time="16:00 WIB"
                 data-type="Online"
-                data-desc="Quantum Machine Learning foundations & Quantum Reservoir Computing, Quantum Device, Quantum Finance, Quantum Algorithm"
-                data-speaker="TBA">
+                data-desc="Foundations of Quantum Mechanics and theoretical principles applied to modern quantum technology."
+                data-speaker="BRIN / Fisika ITS / Cakrawala Univ (Speaker), Dr. Muhammad Taufiqi, M.Si (Moderator)">
                 Session Details 🔍
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Advance topic II -->
+        <!-- 7. Quantum Teleportation -->
         <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="training">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
@@ -244,279 +344,150 @@
                 <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Training Series</span>
                 <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
               </div>
-              <h3 class="text-xl font-bold text-[#002868]">Advance topic II</h3>
+              <h3 class="text-xl font-bold text-[#002868]">Quantum Teleportation</h3>
               <p class="text-slate-600 text-sm">
-                Quantum Optimization, Quantum Chemistry, Quantum in Financial Straight-trough Processing, Quantum Teleportation, PQC
+                Principles and circuit implementations of Quantum Teleportation, Superdense Coding, and Entanglement.
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-10-24</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
+                <span>📅 Date: <strong class="text-[#002868]">2026-11-11</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
+                <span>🎙 Speaker: <strong class="text-[#002868]">Dr. Muhammad Taufiqi, M.Si</strong></span>
               </div>
             </div>
             <div class="flex-shrink-0">
               <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Advance topic II"
-                data-date="2026-10-24"
-                data-time="TBA"
+                data-title="Quantum Teleportation"
+                data-date="2026-11-11"
+                data-time="16:00 WIB"
                 data-type="Online"
-                data-desc="Quantum Optimization, Quantum Chemistry, Quantum in Financial Straight-trough Processing, Quantum Teleportation, PQC"
-                data-speaker="TBA">
+                data-desc="Principles and circuit implementations of Quantum Teleportation, Superdense Coding, and Entanglement."
+                data-speaker="Dr. Muhammad Taufiqi, M.Si">
                 Session Details 🔍
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Ideation & Team Building -->
+        <!-- 8. Quantum AI -->
+        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="training">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Training Series</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
+              </div>
+              <h3 class="text-xl font-bold text-[#002868]">Quantum AI</h3>
+              <p class="text-slate-600 text-sm">
+                Exploring the frontiers of Quantum Artificial Intelligence, Quantum Machine Learning, and Neural Networks.
+              </p>
+              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
+                <span>📅 Date: <strong class="text-[#002868]">2026-11-18</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
+                <span>🎙 Speaker: <strong class="text-[#002868]">Riza Alaudin Syah, M.Sc. / BRIN (Tentative)</strong></span>
+                <span>👤 Moderator: <strong class="text-[#002868]">Irwan</strong></span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
+                data-title="Quantum AI"
+                data-date="2026-11-18"
+                data-time="16:00 WIB"
+                data-type="Online"
+                data-desc="Exploring the frontiers of Quantum Artificial Intelligence, Quantum Machine Learning, and Neural Networks."
+                data-speaker="Riza Alaudin Syah, M.Sc. / BRIN (Tentative), Irwan (Moderator)">
+                Session Details 🔍
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Hackathon Briefing -->
         <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#FFB703]" data-category="hackathon">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FFF8E1] text-[#B45309] border border-amber-300">Hackathon Phase</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FFF8E1] text-[#B45309] border border-amber-300">Hackathon Kickoff</span>
                 <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
               </div>
-              <h3 class="text-xl font-bold text-[#002868]">Ideation & Team Building</h3>
+              <h3 class="text-xl font-bold text-[#002868]">Hackathon Briefing</h3>
               <p class="text-slate-600 text-sm">
-                Brainstorming potential projects and finalizing hackathon teams
+                Hackathon problem statements reveal, competition rules, technical rubrics, and team guidelines.
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-10-24</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
+                <span>📅 Date: <strong class="text-[#002868]">2026-11-19</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
+                <span>🎙 Speaker / Lead: <strong class="text-[#002868]">Riza Alaudin Syah, M.Sc.</strong></span>
               </div>
             </div>
             <div class="flex-shrink-0">
               <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Ideation & Team Building"
-                data-date="2026-10-24"
-                data-time="TBA"
+                data-title="Hackathon Briefing"
+                data-date="2026-11-19"
+                data-time="16:00 WIB"
                 data-type="Online"
-                data-desc="Brainstorming potential projects and finalizing hackathon teams"
-                data-speaker="TBA">
+                data-desc="Hackathon problem statements reveal, competition rules, technical rubrics, and team guidelines."
+                data-speaker="Riza Alaudin Syah, M.Sc.">
                 Session Details 🔍
               </button>
             </div>
           </div>
         </div>
 
-        <!-- IBM Quantum Special Session -->
-        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="training">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="space-y-2">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Special Session</span>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
-              </div>
-              <h3 class="text-xl font-bold text-[#002868]">IBM Quantum Special Session</h3>
-              <p class="text-slate-600 text-sm">
-                Qiskit 101 by IBM Quantum
-              </p>
-              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-10-28</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">IBM Quantum</strong></span>
-              </div>
-            </div>
-            <div class="flex-shrink-0">
-              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="IBM Quantum Special Session"
-                data-date="2026-10-28"
-                data-time="TBA"
-                data-type="Online"
-                data-desc="Qiskit 101 by IBM Quantum"
-                data-speaker="IBM Quantum">
-                Session Details 🔍
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fall Fest Kickoff Ceremony -->
-        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#00509D]" data-category="ceremony">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="space-y-2">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#00509D] border border-blue-200">Opening Ceremony</span>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Surabaya</span>
-              </div>
-              <h3 class="text-xl font-bold text-[#002868]">Fall Fest Kickoff Ceremony</h3>
-              <p class="text-slate-600 text-sm">
-                First Ceremonial Event: Opening remarks, keynote, and hackathon guidelines (ITS Surabaya & Online)
-              </p>
-              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-11-07</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
-              </div>
-            </div>
-            <div class="flex-shrink-0">
-              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Fall Fest Kickoff Ceremony"
-                data-date="2026-11-07"
-                data-time="TBA"
-                data-type="Surabaya"
-                data-desc="First Ceremonial Event: Opening remarks, keynote, and hackathon guidelines (ITS Surabaya & Online)"
-                data-speaker="TBA">
-                Session Details 🔍
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mid-Fest Symposium & Check-in -->
-        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#00509D]" data-category="ceremony">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="space-y-2">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#00509D] border border-blue-200">Symposium</span>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Hybrid</span>
-              </div>
-              <h3 class="text-xl font-bold text-[#002868]">Mid-Fest Symposium & Check-in</h3>
-              <p class="text-slate-600 text-sm">
-                Second Ceremonial Event: Progress presentation, networking, and expert talks
-              </p>
-              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-11-14</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
-              </div>
-            </div>
-            <div class="flex-shrink-0">
-              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Mid-Fest Symposium & Check-in"
-                data-date="2026-11-14"
-                data-time="TBA"
-                data-type="Hybrid"
-                data-desc="Second Ceremonial Event: Progress presentation, networking, and expert talks"
-                data-speaker="TBA">
-                Session Details 🔍
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Qiskit Fall Fest Hackathon -->
+        <!-- Hackathon Main Period Highlight -->
         <div class="timeline-event-card flyer-card p-6 sm:p-7 border-2 border-[#FFB703] bg-[#FFFDF7]" data-category="hackathon">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FFB703] text-[#002868]">🏆 HACKATHON PHASE</span>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-100 text-amber-900 font-bold">Main Coding Period</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FFB703] text-[#002868]">🏆 HACKATHON PERIOD</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-100 text-amber-900 font-bold">Main Sprint & Mentorship</span>
               </div>
-              <h3 class="text-xl font-extrabold text-[#002868]">Qiskit Fall Fest Hackathon</h3>
+              <h3 class="text-xl font-extrabold text-[#002868]">Qiskit Fall Fest Hackathon Sprint</h3>
               <p class="text-slate-700 text-sm">
-                Main Hackathon coding period with asynchronous mentor support
+                One-week intensive hackathon sprint with mentor guidance and quantum cloud execution.
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Period: <strong class="text-[#002868]">2026-11-16 to 2026-11-29</strong></span>
-                <span>📍 Format: <strong class="text-[#002868]">Online</strong></span>
+                <span>📅 Period: <strong class="text-[#002868]">2026-11-19 to 2026-11-26</strong></span>
+                <span>📍 Format: <strong class="text-[#002868]">Online & Asynchronous Support</strong></span>
               </div>
             </div>
             <div class="flex-shrink-0">
-              <a href="login.html" class="btn-flyer-yellow px-6 py-3 text-xs sm:text-sm font-extrabold w-full md:w-auto text-center">
+              <a href="login.html" class="btn-flyer-yellow px-6 py-3 text-xs sm:text-sm font-extrabold w-full md:w-auto text-center block">
                 Register Hackathon Team ★
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Hackathon Final Presentation -->
-        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#FFB703]" data-category="hackathon">
-          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div class="space-y-2">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#FFF8E1] text-[#B45309] border border-amber-300">Final Presentation</span>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Jakarta</span>
-              </div>
-              <h3 class="text-xl font-bold text-[#002868]">Hackathon Final Presentation</h3>
-              <p class="text-slate-600 text-sm">
-                Final project presentation and demonstration of quantum solutions
-              </p>
-              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-11-26</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">Hackathon Finalists</strong></span>
-              </div>
-            </div>
-            <div class="flex-shrink-0">
-              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Hackathon Final Presentation"
-                data-date="2026-11-26"
-                data-time="TBA"
-                data-type="Jakarta"
-                data-desc="Final project presentation and demonstration of quantum solutions"
-                data-speaker="Hackathon Finalists">
-                Session Details 🔍
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hackathon Submission & Wrap-up -->
+        <!-- 10. Hackathon Winner Announcement -->
         <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="ceremony">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Closing Ceremony</span>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Jakarta</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Closing & Awarding</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-100 text-blue-900 font-bold">Hybrid</span>
               </div>
-              <h3 class="text-xl font-bold text-[#002868]">Hackathon Submission & Wrap-up</h3>
+              <h3 class="text-xl font-bold text-[#002868]">Hackathon Winner Announcement & Closing Ceremony</h3>
               <p class="text-slate-600 text-sm">
-                Final project submission deadline and online closing remarks
+                Final hackathon project presentations, winner announcements, awarding, and ceremonial festival closing.
               </p>
               <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-11-30</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">TBA</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">TBA</strong></span>
+                <span>📅 Date: <strong class="text-[#002868]">2026-11-26</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">10:00 WIB</strong></span>
+                <span>🎙 Partner: <strong class="text-[#002868]">IKA ITS</strong></span>
               </div>
             </div>
             <div class="flex-shrink-0">
               <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Hackathon Submission & Wrap-up"
-                data-date="2026-11-30"
-                data-time="TBA"
-                data-type="Jakarta"
-                data-desc="Final project submission deadline and online closing remarks"
-                data-speaker="TBA">
+                data-title="Hackathon Winner Announcement & Closing Ceremony"
+                data-date="2026-11-26"
+                data-time="10:00 WIB"
+                data-type="Hybrid"
+                data-desc="Final hackathon project presentations, winner announcements, awarding, and ceremonial festival closing."
+                data-speaker="IKA ITS">
                 Session Details 🔍
               </button>
             </div>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PRIZE POOL TEMPLATE CARDS -->
-    <section class="py-14 bg-white border-t border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002868]">Hackathon Prize Categories</h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-1">Total Prize Pool: <span class="template-tag">[Fill Total Prize Pool]</span></p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
-          
-          <div class="flyer-card p-6 border-t-4 border-t-slate-400">
-            <div class="text-lg font-bold text-slate-700 mb-1">🥈 2nd Place</div>
-            <div class="text-2xl font-extrabold text-[#00509D] font-mono mb-2"><span class="template-tag">[Fill 2nd Place Prize]</span></div>
-            <div class="text-xs text-slate-500 font-mono"><span class="template-tag">[Fill Benefits / IBM Certificate]</span></div>
-          </div>
-
-          <div class="flyer-card p-6 border-4 border-[#FFB703] bg-[#FFFDF7] shadow-lg scale-105">
-            <div class="text-xs font-mono font-bold text-[#B45309] uppercase tracking-wider mb-1">👑 1ST PLACE CHAMPION</div>
-            <div class="text-3xl font-extrabold text-[#002868] font-mono mb-2"><span class="template-tag">[Fill 1st Place Prize]</span></div>
-            <div class="text-xs text-slate-600 font-mono"><span class="template-tag">[Fill Trophy + IBM Champion Badges]</span></div>
-          </div>
-
-          <div class="flyer-card p-6 border-t-4 border-t-amber-700">
-            <div class="text-lg font-bold text-slate-700 mb-1">🥉 3rd Place</div>
-            <div class="text-2xl font-extrabold text-[#00509D] font-mono mb-2"><span class="template-tag">[Fill 3rd Place Prize]</span></div>
-            <div class="text-xs text-slate-500 font-mono"><span class="template-tag">[Fill Benefits / IBM Certificate]</span></div>
-          </div>
-
         </div>
 
       </div>
@@ -587,14 +558,14 @@
             <li><a href="index.html" class="hover:text-[#FFB703]">Home</a></li>
             <li><a href="event.html" class="hover:text-[#FFB703]">Events & Schedule</a></li>
             <li><a href="about.html" class="hover:text-[#FFB703]">About & Campus Venue</a></li>
-            <li><a href="playground.html" class="hover:text-[#FFB703]">Playground ⚛</a></li>
+            <li><a href="playground.html" class="hover:text-[#FFB703]">Playground</a></li>
             <li><a href="login.html" class="hover:text-[#FFB703]">Registration Form</a></li>
           </ul>
         </div>
         <div class="space-y-2">
           <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Get in Touch</h5>
           <ul class="space-y-1.5 text-xs text-blue-100 font-mono">
-            <li>📧 <span class="template-tag">[Fill Committee Email]</span></li>
+            <li>📧 <a href="mailto:qff.its@gmail.com" class="hover:text-[#FFB703] transition-colors">qff.its@gmail.com</a></li>
             <li>🌐 <a href="https://www.its.ac.id" target="_blank" rel="noopener" class="hover:text-[#FFB703]">its.ac.id</a></li>
             <li>📱 <span class="text-[#FFB703]">@ITS_campus</span></li>
           </ul>

@@ -42,29 +42,22 @@
 </head>
 <body class="bg-[#F4F7FB] text-slate-800 antialiased min-h-screen flex flex-col font-sans">
 
-  <!-- TOP FLYER ANNOUNCEMENT BANNER -->
-  <aside aria-label="Announcement" class="flyer-top-banner py-2 px-4 text-center text-xs font-mono font-semibold tracking-wide border-b border-blue-900/20">
-    <div class="max-w-7xl mx-auto flex items-center justify-center space-x-2">
-      <span class="animate-pulse">⚛</span>
-      <span>INTERACTIVE QUANTUM LAB • VISUAL QUBIT FLOW & GATE PUZZLES</span>
-      <span class="animate-pulse">⚛</span>
-    </div>
-  </aside>
-
-  <!-- NAVIGATION HEADER -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+  <!-- Header / Navigation (Clean White & Navy) -->
+  <header class="sticky top-0 z-50 flyer-nav">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex justify-between items-center h-20">
         
-        <!-- Brand Logo -->
-        <a href="index.html" class="flex items-center space-x-3 group">
-          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026 Badge" class="h-12 w-12 object-contain transition-transform group-hover:scale-105">
+        <!-- Brand / Logos -->
+        <a href="index.html" class="flex items-center space-x-2 lg:space-x-3 group shrink-0">
+          <img src="assets/images/qiskitfallfest2026_transparent_square.png" alt="Qiskit Fall Fest 2026" class="h-10 w-10 sm:h-12 sm:w-12 object-contain">
+          <div class="h-8 w-[1.5px] bg-slate-300 mx-1 hidden lg:block"></div>
+          <img src="assets/images/its-logo-blue.svg" alt="ITS" class="h-8 w-auto object-contain hidden lg:block">
           <div class="flex flex-col">
-            <div class="flex items-center space-x-1.5">
-              <span class="font-extrabold text-lg tracking-tight text-[#002868]">QISKIT FALL FEST</span>
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
+              <span class="font-extrabold text-base sm:text-lg tracking-tight text-[#002868] whitespace-nowrap">QISKIT FALL FEST</span>
               <span class="text-xs px-2 py-0.5 rounded-full bg-[#FFB703] text-[#002868] font-mono font-bold">2026</span>
             </div>
-            <span class="text-xs text-slate-500 font-medium">Institut Teknologi Sepuluh Nopember</span>
+            <span class="text-[10px] sm:text-xs text-slate-500 font-medium truncate max-w-[160px] sm:max-w-none">Institut Teknologi Sepuluh Nopember</span>
           </div>
         </a>
 
@@ -73,9 +66,9 @@
           <a href="index.html" class="nav-link py-2 text-sm">Home</a>
           <a href="event.html" class="nav-link py-2 text-sm">Events & Schedule</a>
           <a href="about.html" class="nav-link py-2 text-sm">About & Venue</a>
-          <a href="playground.html" class="nav-link py-2 text-sm active">Playground ⚛</a>
+          <a href="playground.html" class="nav-link py-2 text-sm active">Playground</a>
           <a href="login.html" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2">
-            <span>Participant Portal</span>
+            <span>Registration Form</span>
             <svg class="w-4 h-4 text-[#FFB703]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
@@ -97,8 +90,8 @@
         <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Home</a>
         <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Events & Schedule</a>
         <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About & Venue</a>
-        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium active">Playground ⚛</a>
-        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Participant Portal / Register</a>
+        <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium active">Playground</a>
+        <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Register via Google Form ↗</a>
       </div>
     </nav>
   </header>
@@ -365,14 +358,14 @@ print(qc.draw())</code></pre>
             <li><a href="index.html" class="hover:text-[#FFB703] transition-colors">Home</a></li>
             <li><a href="event.html" class="hover:text-[#FFB703] transition-colors">Events & Schedule</a></li>
             <li><a href="about.html" class="hover:text-[#FFB703] transition-colors">About & Campus Venue</a></li>
-            <li><a href="playground.html" class="hover:text-[#FFB703] transition-colors">Playground ⚛</a></li>
+            <li><a href="playground.html" class="hover:text-[#FFB703] transition-colors">Playground</a></li>
             <li><a href="login.html" class="hover:text-[#FFB703] transition-colors">Participant Portal</a></li>
           </ul>
         </div>
         <div class="space-y-2">
           <h5 class="text-[#FFB703] font-bold text-xs uppercase tracking-wider font-mono">Get in Touch</h5>
           <ul class="space-y-1.5 text-xs text-blue-100 font-mono">
-            <li>📧 <span class="template-tag">[Fill Committee Email]</span></li>
+            <li>📧 <a href="mailto:qff.its@gmail.com" class="hover:text-[#FFB703] transition-colors">qff.its@gmail.com</a></li>
             <li>🌐 <a href="https://www.its.ac.id" target="_blank" rel="noopener" class="hover:text-[#FFB703]">its.ac.id</a></li>
             <li>📱 <span class="text-[#FFB703]">@ITS_campus</span></li>
           </ul>
