@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = btn.getAttribute('data-filter');
 
         eventCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
-          if (category === 'all' || cardCategory === category) {
+          const cardCategory = card.getAttribute('data-category') || '';
+          const categories = cardCategory.split(/\s+/);
+          if (category === 'all' || categories.includes(category)) {
             card.style.display = 'block';
           } else {
             card.style.display = 'none';
@@ -39,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalType = document.getElementById('modal-event-type');
   const modalDesc = document.getElementById('modal-event-desc');
   const modalSpeaker = document.getElementById('modal-event-speaker');
+  const modalLocationBox = document.getElementById('modal-event-location-box');
+  const modalLocation = document.getElementById('modal-event-location');
+  const modalMaps = document.getElementById('modal-event-maps');
+  const modalPosterBox = document.getElementById('modal-event-poster-box');
+  const modalPosterImg = document.getElementById('modal-event-poster-img');
   const modalCloseBtn = document.getElementById('modal-close-btn');
 
   const detailButtons = document.querySelectorAll('.view-detail-btn');
@@ -52,6 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const type = btn.getAttribute('data-type') || '';
       const desc = btn.getAttribute('data-desc') || '';
       const speaker = btn.getAttribute('data-speaker') || '';
+      const location = btn.getAttribute('data-location') || '';
+      const mapsUrl = btn.getAttribute('data-maps') || '';
+      const poster = btn.getAttribute('data-poster') || '';
 
       if (modalTitle) modalTitle.textContent = title;
       if (modalDate) modalDate.textContent = date;
@@ -59,6 +68,35 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalType) modalType.textContent = type;
       if (modalDesc) modalDesc.textContent = desc;
       if (modalSpeaker) modalSpeaker.textContent = speaker;
+
+      // Handle Location & Maps
+      if (modalLocationBox) {
+        if (location) {
+          if (modalLocation) modalLocation.textContent = location;
+          if (modalMaps) {
+            if (mapsUrl) {
+              modalMaps.href = mapsUrl;
+              modalMaps.classList.remove('hidden');
+            } else {
+              modalMaps.classList.add('hidden');
+            }
+          }
+          modalLocationBox.classList.remove('hidden');
+        } else {
+          modalLocationBox.classList.add('hidden');
+        }
+      }
+
+      // Handle Poster Preview
+      if (modalPosterBox && modalPosterImg) {
+        if (poster) {
+          modalPosterImg.src = poster;
+          modalPosterBox.classList.remove('hidden');
+        } else {
+          modalPosterImg.src = '';
+          modalPosterBox.classList.add('hidden');
+        }
+      }
 
       modal.classList.remove('hidden');
       modal.classList.add('flex');

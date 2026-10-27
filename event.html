@@ -68,7 +68,7 @@
         <div class="hidden lg:flex items-center space-x-8">
           <a href="index.html" class="nav-link py-2 text-sm">Home</a>
           <a href="event.html" class="nav-link py-2 text-sm active">Events & Schedule</a>
-          <a href="about.html" class="nav-link py-2 text-sm">About & Venue</a>
+          <a href="about.html" class="nav-link py-2 text-sm">About</a>
           <a href="playground.html" class="nav-link py-2 text-sm">Playground</a>
           <a href="login.html" class="btn-flyer-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2">
             <span>Registration Form</span>
@@ -92,7 +92,7 @@
       <div id="mobile-menu" class="hidden lg:hidden pb-5 pt-2 border-t border-slate-200 space-y-2 bg-white px-2">
         <a href="index.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Home</a>
         <a href="event.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium active">Events & Schedule</a>
-        <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About & Venue</a>
+        <a href="about.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">About</a>
         <a href="playground.html" class="nav-link block px-3 py-2 rounded-lg text-base font-medium">Playground</a>
         <a href="login.html" class="btn-flyer-primary block text-center px-4 py-2.5 rounded-full text-base font-semibold mt-3">Register via Google Form ↗</a>
       </div>
@@ -119,6 +119,9 @@
         <div class="flex flex-wrap justify-center gap-2 pt-6 max-w-2xl mx-auto">
           <button type="button" class="schedule-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all border bg-[#002868] text-white border-[#002868]" data-filter="all">
             All Sessions
+          </button>
+          <button type="button" class="schedule-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all border bg-white text-slate-700 border-slate-300 hover:border-slate-400" data-filter="offline">
+            📍 Offline (ITS Campus)
           </button>
           <button type="button" class="schedule-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all border bg-white text-slate-700 border-slate-300 hover:border-slate-400" data-filter="preevent">
             Pre-Event
@@ -303,35 +306,92 @@
           </div>
         </div>
 
-        <!-- 6. Quantum Mechanics -->
-        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#002868]" data-category="training">
+        <!-- 6. Foundation Quantum Circuit (Offline) -->
+        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#00509D]" data-category="training offline">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-2">
               <div class="flex flex-wrap items-center gap-2">
                 <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Training Series</span>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700">Online</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">📍 Offline (Tatap Muka)</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-[#FFF8E1] text-[#B45309] font-bold border border-amber-300">Free for Public + E-Certificate 📜</span>
               </div>
-              <h3 class="text-xl font-bold text-[#002868]">Quantum Mechanics</h3>
+              <h3 class="text-xl font-bold text-[#002868]">Foundation Quantum Circuit</h3>
               <p class="text-slate-600 text-sm">
-                Foundations of Quantum Mechanics and theoretical principles applied to modern quantum technology.
+                Fundamental principles of quantum circuits, quantum logic gates, and circuit construction hands-on at Departemen Teknik Elektro ITS Surabaya.
               </p>
-              <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-600 pt-1">
-                <span>📅 Date: <strong class="text-[#002868]">2026-11-04</strong></span>
-                <span>⏰ Time: <strong class="text-[#002868]">16:00 WIB</strong></span>
-                <span>🎙 Speaker: <strong class="text-[#002868]">BRIN / Fisika ITS / Cakrawala Univ</strong></span>
-                <span>👤 Moderator: <strong class="text-[#002868]">Dr. Muhammad Taufiqi, M.Si</strong></span>
+              <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono text-slate-600 pt-1">
+                <span>📅 Date: <strong class="text-[#002868]">Wednesday, 4 November 2026</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">15:30 WIB</strong></span>
+                <span>📍 Location: <strong class="text-[#002868]">Departemen Teknik Elektro, ITS Surabaya</strong></span>
+                <span>🎙 Speaker: <strong class="text-[#002868]">Dr. Ir. Wirawan, DEA</strong> (Lecturer at Electrical Engineering Dept ITS)</span>
+              </div>
+              <div class="pt-1 flex flex-wrap gap-2 text-xs font-mono">
+                <a href="https://its.id/m/LokasiTeknikElektro" target="_blank" rel="noopener" class="inline-flex items-center text-[#00509D] hover:text-[#002868] font-bold underline">
+                  📍 Buka Lokasi GMaps (its.id/m/LokasiTeknikElektro) ↗
+                </a>
               </div>
             </div>
-            <div class="flex-shrink-0">
-              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full md:w-auto"
-                data-title="Quantum Mechanics"
-                data-date="2026-11-04"
-                data-time="16:00 WIB"
-                data-type="Online"
-                data-desc="Foundations of Quantum Mechanics and theoretical principles applied to modern quantum technology."
-                data-speaker="BRIN / Fisika ITS / Cakrawala Univ (Speaker), Dr. Muhammad Taufiqi, M.Si (Moderator)">
+            <div class="flex-shrink-0 flex flex-col sm:flex-row md:flex-col gap-2">
+              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full"
+                data-title="Foundation Quantum Circuit"
+                data-date="Wednesday, 4 November 2026"
+                data-time="15:30 WIB"
+                data-type="Training Series • Offline"
+                data-desc="Fundamental principles of quantum circuits, quantum logic gates, and circuit construction hands-on at Departemen Teknik Elektro ITS Surabaya. Free for public with E-Certificate provided."
+                data-speaker="Dr. Ir. Wirawan, DEA (Lecturer at Electrical Engineering Department, ITS Surabaya)"
+                data-location="Departemen Teknik Elektro, ITS Surabaya"
+                data-maps="https://its.id/m/LokasiTeknikElektro"
+                data-poster="assets/images/poster-foundation-quantum-circuit.jpeg">
                 Session Details 🔍
               </button>
+              <a href="assets/images/poster-foundation-quantum-circuit.jpeg" target="_blank" class="btn-flyer-yellow px-4 py-2 text-xs font-bold text-center rounded-xl shadow-sm">
+                Lihat Poster 🖼️
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Quantum Algorithms (Offline) -->
+        <div class="timeline-event-card flyer-card p-6 sm:p-7 border-l-8 border-l-[#FFB703]" data-category="training offline">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E8F1FC] text-[#002868] border border-blue-200">Training Series</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">📍 Offline (Tatap Muka)</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-[#FFF8E1] text-[#B45309] font-bold border border-amber-300">Free for Public + E-Certificate 📜</span>
+              </div>
+              <h3 class="text-xl font-bold text-[#002868]">Quantum Algorithms</h3>
+              <p class="text-slate-600 text-sm">
+                In-depth masterclass exploring quantum algorithms, quantum computational advantages, and principles with Prof. Agus Purwanto at Departemen Fisika ITS Surabaya.
+              </p>
+              <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono text-slate-600 pt-1">
+                <span>📅 Date: <strong class="text-[#002868]">Thursday, 5 November 2026</strong></span>
+                <span>⏰ Time: <strong class="text-[#002868]">15:30 WIB</strong></span>
+                <span>📍 Location: <strong class="text-[#002868]">Departemen Fisika, ITS Surabaya</strong></span>
+                <span>🎙 Speaker: <strong class="text-[#002868]">Prof. Drs. Agus Purwanto, M.Si, M.Sc, D.Sc.</strong> (Professor at Physics Dept ITS)</span>
+              </div>
+              <div class="pt-1 flex flex-wrap gap-2 text-xs font-mono">
+                <a href="https://its.id/m/LokasiFisikaITS" target="_blank" rel="noopener" class="inline-flex items-center text-[#00509D] hover:text-[#002868] font-bold underline">
+                  📍 Buka Lokasi GMaps (its.id/m/LokasiFisikaITS) ↗
+                </a>
+              </div>
+            </div>
+            <div class="flex-shrink-0 flex flex-col sm:flex-row md:flex-col gap-2">
+              <button class="view-detail-btn btn-flyer-outline px-5 py-2.5 text-xs sm:text-sm font-bold w-full"
+                data-title="Quantum Algorithms"
+                data-date="Thursday, 5 November 2026"
+                data-time="15:30 WIB"
+                data-type="Training Series • Offline"
+                data-desc="In-depth masterclass exploring quantum algorithms, quantum computational advantages, and principles with Prof. Agus Purwanto at Departemen Fisika ITS Surabaya. Free for public with E-Certificate provided."
+                data-speaker="Prof. Drs. Agus Purwanto, M.Si, M.Sc, D.Sc. (Professor at Physics Department, ITS Surabaya)"
+                data-location="Departemen Fisika, ITS Surabaya"
+                data-maps="https://its.id/m/LokasiFisikaITS"
+                data-poster="assets/images/poster-quantum-algorithms.jpeg">
+                Session Details 🔍
+              </button>
+              <a href="assets/images/poster-quantum-algorithms.jpeg" target="_blank" class="btn-flyer-yellow px-4 py-2 text-xs font-bold text-center rounded-xl shadow-sm">
+                Lihat Poster 🖼️
+              </a>
             </div>
           </div>
         </div>
@@ -496,8 +556,8 @@
   </main>
 
   <!-- EVENT DETAIL MODAL (Pop-up Clean) -->
-  <div id="event-detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
-    <div class="bg-white max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-slate-200 relative shadow-2xl animate-fadeIn">
+  <div id="event-detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-white max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-slate-200 relative shadow-2xl animate-fadeIn my-8 max-h-[90vh] overflow-y-auto">
       
       <!-- Close Button -->
       <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors" aria-label="Close">
@@ -518,6 +578,14 @@
           <div>⏰ <span id="modal-event-time">Time</span></div>
         </div>
 
+        <!-- Optional Location Row -->
+        <div id="modal-event-location-box" class="hidden text-xs font-mono bg-blue-50/70 p-3 rounded-xl border border-blue-100 text-blue-900 flex flex-wrap items-center justify-between gap-2">
+          <div>📍 <strong id="modal-event-location">Location</strong></div>
+          <a id="modal-event-maps" href="#" target="_blank" rel="noopener" class="text-xs text-[#00509D] font-bold underline hover:text-[#002868] flex items-center gap-1">
+            <span>Buka Google Maps ↗</span>
+          </a>
+        </div>
+
         <div class="text-sm text-slate-700 leading-relaxed space-y-2">
           <h4 class="text-xs font-mono uppercase tracking-wider text-[#00509D] font-bold">Session Overview:</h4>
           <p id="modal-event-desc">Full session description.</p>
@@ -526,6 +594,15 @@
         <div class="text-xs text-slate-600 bg-[#F8FAFD] p-3 rounded-xl border border-slate-200">
           <span class="text-slate-800 font-semibold">🎙 Speaker / Instructor:</span>
           <p id="modal-event-speaker" class="mt-1 font-mono text-[#002868]">-</p>
+        </div>
+
+        <!-- Optional Poster Image Preview -->
+        <div id="modal-event-poster-box" class="hidden pt-2">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-[#00509D] font-bold mb-2">Event Poster / Flyer:</h4>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 max-h-72 flex justify-center bg-slate-900">
+            <img id="modal-event-poster-img" src="" alt="Event Poster" class="h-full max-h-72 object-contain cursor-pointer" onclick="window.open(this.src, '_blank')">
+          </div>
+          <p class="text-[11px] text-slate-500 mt-1 italic text-center">Klik poster untuk melihat gambar asli</p>
         </div>
 
         <div class="pt-2 flex justify-end gap-3">
@@ -557,7 +634,7 @@
           <ul class="space-y-1.5 text-xs text-blue-100">
             <li><a href="index.html" class="hover:text-[#FFB703]">Home</a></li>
             <li><a href="event.html" class="hover:text-[#FFB703]">Events & Schedule</a></li>
-            <li><a href="about.html" class="hover:text-[#FFB703]">About & Campus Venue</a></li>
+            <li><a href="about.html" class="hover:text-[#FFB703]">About</a></li>
             <li><a href="playground.html" class="hover:text-[#FFB703]">Playground</a></li>
             <li><a href="login.html" class="hover:text-[#FFB703]">Registration Form</a></li>
           </ul>

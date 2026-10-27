@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Qiskit Fall Fest ITS 2026//ID
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:qff-its-20261012-quantum-circuit@its.ac.id
+DTSTAMP:20261011T120000Z
+DTSTART:20261012T090000Z
+DTEND:20261012T100000Z
+SUMMARY:Qiskit Fall Fest ITS 2026: Foundation of Quantum Circuit
+DESCRIPTION:Sesi webinar "Foundation of Quantum Circuit" oleh Riza Alaudin Syah (Lead Organizer Qiskit Fall Fest ITS 2026 / Universiti Teknologi Malaysia).\n\nPlatform: Zoom Meeting\nLink Zoom: https://its.id/join-zoom-QFF-ITS\nMeeting ID: 956 1728 9301\nWebsite: https://event.its.ac.id/qiskitfallfest
+LOCATION:Online via Zoom (https://its.id/join-zoom-QFF-ITS)
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Pengingat 30 Menit Sesi Foundation of Quantum Circuit
+END:VALARM
+END:VEVENT
+END:VCALENDAR
